@@ -1,0 +1,174 @@
+
+html {
+    background: #fff;
+    color: #000;
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+
+.Footer{
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    font: 11px 'Tahoma';
+    color: #474b4d;
+}
+
+.genumEnter {
+    display: block;
+    margin: 40px auto 0;
+    white-space: nowrap;
+    text-indent: 9999em;
+    overflow: hidden;
+    width: 60px;
+    height: 26px;
+    background: url("img/genum.png") no-repeat 0 0;
+}
+
+.genumEnter:hover {
+    background-position: 100% 0;
+}
+
+
+
+.Main.OnlineMagazine{
+    -ms-border-radius: 7px;
+    border-radius: 7px;
+    border: 10px solid #ededed;
+    overflow: hidden;
+}
+
+.Main {
+    padding: 0 0 0px 0;
+    margin: auto;
+    max-width: 1064px;
+	min-width: 1000px;
+}
+
+.Header {
+    position: relative;
+    height: 100px;
+    margin: 0 0 40px;
+}
+
+.logo {
+    background: url("img/logo.png") no-repeat;
+    width: 246px;
+    height: 55px;
+    display: block;
+    position: absolute;
+    left: 0;
+}
+
+.topPhone {
+    background: url("img/phoneEnterIcon.png") no-repeat 0 1px;
+    padding: 0px 0px 0px 30px;
+    font: 20px/22px 'FontMedium';
+    top: 50px;
+	right: 100px;
+	position: absolute;
+}
+
+.topPhone span {
+    font: 30px/30px 'FontMedium';
+}
+
+.topPhone a.callMe {
+    color: #d52f1f;
+    font: 19px 'FontMedium';
+    float: right;
+}
+
+.topRoad{
+	background: url("img/topRoad.png") no-repeat;
+    width: 246px;
+    height: 100%;
+	display: block;
+    position: absolute;
+    right: 0;
+}
+
+.BigLogo{
+	background: url("img/покрышка.jpg");
+	display: block;
+	text-align: start; 
+	float: none; 
+	position: relative;
+	top: auto;
+	right: auto;
+	bottom: auto;
+	left: auto; 
+	z-index: auto; 
+	width: 100%;
+	height: 290px; 
+	margin: 0px;
+	overflow: hidden;
+
+}
+
+.OnlineMagazine a {
+    display: block;
+    background: url("img/enterButton.jpg") no-repeat;
+    width: 381px;
+    height: 45px;
+    text-decoration: none;
+    color: #404040;
+    font: 18px 'FontMedium';
+}
+
+.OnlineMagazine a span {
+    float: right;
+    padding: 12px 55px 0 0;
+}
+
+.OnlineMagazine a:hover span {
+    color: #00008b;
+}
+
+
+
+
+
+
+#bannersContainerSlider {
+    position: relative;
+    width: 1064px;
+    height: 240px;
+}
+
+#pagerSlide {
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    position: absolute;
+    z-index: 100000;
+    margin: 0 auto;
+    width: 150px;
+    text-align: center;
+}
+
+#pagerSlide a {
+    border: 2px solid #c4d8dc;
+    border-radius: 10px;
+    background: #fff;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px 0 0;
+}
+
+#pagerSlide a:hover {
+    background: #a1a8a2;
+}
+
+#pagerSlide a span {
+    display: none;
+}/*не писать циферки*/
+
+#pagerSlide a.selected {
+    background-color: #a1a8a2;
+    border: 2px solid #a1a8a2;
+}
+
