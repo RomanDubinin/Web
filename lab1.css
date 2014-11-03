@@ -63,22 +63,21 @@ html {
 }
 
 .topPhone {
-    background: url("img/phoneEnterIcon.png") no-repeat 0 1px;
+    background: url("img/phoneIcon.png") no-repeat 0 1px;
     padding: 0px 0px 0px 30px;
     font: 20px/22px 'FontMedium';
     top: 50px;
-	right: 100px;
+	left: 600px;
 	position: absolute;
 }
 
-.topPhone span {
-    font: 30px/30px 'FontMedium';
-}
-
-.topPhone a.callMe {
-    color: #d52f1f;
-    font: 19px 'FontMedium';
-    float: right;
+.topBucket {
+    background: url("img/bucketIcon.png") no-repeat 0 1px;
+    padding: 0px 0px 0px 30px;
+    font: 20px/22px 'FontMedium';
+    top: 75px;
+	left: 600px;
+	position: absolute;
 }
 
 .topRoad{
