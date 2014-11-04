@@ -10,28 +10,32 @@ html {
 
 .Footer{
     width: 100%;
-    margin: 0 auto;
+	display: block;
+    margin: 0;
     text-align: center;
     font: 11px 'Tahoma';
     color: #474b4d;
 }
 
 .genumEnter {
-    display: block;
-    margin: 40px auto 0;
+	display: block;
+    margin: 20px auto 0;
     white-space: nowrap;
     text-indent: 9999em;
     overflow: hidden;
     width: 60px;
     height: 26px;
-    background: url("img/genum.png") no-repeat 0 0;
+    background: url("img/genum.png") no-repeat;
 }
 
 .genumEnter:hover {
     background-position: 100% 0;
 }
 
-
+.Footer .Copy{
+	margin: 10px 0 0 10px;
+	display: block;
+}
 
 .Main.OnlineMagazine{
     -ms-border-radius: 7px;
@@ -47,22 +51,20 @@ html {
 	min-width: 1000px;
 }
 
-.Header {
+.Main .Header {
     position: relative;
     height: 100px;
-    margin: 0 0 40px;
 }
 
-.logo {
+.Main .Header .logo {
     background: url("img/logo.png") no-repeat;
-    width: 246px;
+    width: 300px;
     height: 55px;
     display: block;
     position: absolute;
-    left: 0;
 }
 
-.topPhone {
+.Main .Header .topPhone {
     background: url("img/phoneIcon.png") no-repeat 0 1px;
     padding: 0px 0px 0px 30px;
     font: 20px/22px 'FontMedium';
@@ -71,8 +73,8 @@ html {
 	position: absolute;
 }
 
-.topBucket {
-    background: url("img/bucketIcon.png") no-repeat 0 1px;
+.Main .Header .topBucket {
+    background: url("img/bucketIcon.png") no-repeat;
     padding: 0px 0px 0px 30px;
     font: 20px/22px 'FontMedium';
     top: 75px;
@@ -80,36 +82,49 @@ html {
 	position: absolute;
 }
 
-.topRoad{
+.Main .Header .topRoad{
+	float: right;
 	background: url("img/topRoad.png") no-repeat;
-    width: 246px;
+    width: 350px;
     height: 100%;
 	display: block;
-    position: absolute;
-    right: 0;
 }
 
-.BigLogo{
-	background: url("img/покрышка.jpg");
-	display: block;
-	text-align: start; 
-	float: none; 
+.Main .Menu{
 	position: relative;
-	top: auto;
-	right: auto;
-	bottom: auto;
-	left: auto; 
-	z-index: auto; 
+	background: url("img/menuFon.jpg") no-repeat;
+	width: 100%;
+	height: 58px; 
+	margin: 0 0 20 0;
+	border-radius: 7px;
+
+}
+
+.Main .Menu ul {
+	margin: 0;
+	vertical-align: middle
+}
+
+.Main .Menu li {
+	
+	display: inline;
+	padding: 10px 40 0 40;
+	margin: 0 0 0 0;
+}
+
+
+.Main .BigLogo{
+	background: url("img/покрышка.jpg");
 	width: 100%;
 	height: 290px; 
-	margin: 0px;
 	overflow: hidden;
-
+	border-radius: 7px;
 }
 
-.OnlineMagazine a {
+.Main .OnlineMagazine {
     display: block;
     background: url("img/enterButton.jpg") no-repeat;
+	margin: 40px auto;
     width: 381px;
     height: 45px;
     text-decoration: none;
@@ -117,12 +132,12 @@ html {
     font: 18px 'FontMedium';
 }
 
-.OnlineMagazine a span {
+.Main .OnlineMagazine a {
     float: right;
     padding: 12px 55px 0 0;
 }
 
-.OnlineMagazine a:hover span {
+.Main .OnlineMagazine a:hover {
     color: #00008b;
 }
 
@@ -171,3 +186,79 @@ html {
     border: 2px solid #a1a8a2;
 }
 
+
+
+
+
+
+.Search {
+    margin: 0px auto 265px;
+    width: 100%;
+}
+
+
+.Search .searchTD {
+    display: inline-block;
+    width: 32%;
+    height: 262px;
+    margin: 0 1px 0 0;
+    border-radius: 10px;
+    border: 1px solid #dbdbdb;
+    font: 12px/12px 'Verdana';
+}
+
+
+
+.Search .searchTD .searchTDTitle {
+    text-align: center;
+    font: 16px/39px 'FontBold';
+    color: #303134;
+    text-transform: uppercase;
+    background: #e6eff1;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+
+.Search .searchTD .searchForm {
+    padding: 25px 18px 15px 18px;
+    position: relative;
+    height: 182px;
+}
+
+
+.Search .searchAuto {
+    display: inline-block;
+    width: 33%;
+    height: 262px;
+    margin: 0 1px 0 0;
+    border-radius: 10px;
+    border: 1px solid #dbdbdb;
+    font: 12px/12px 'Verdana';
+}
+
+
+.Search .searchAuto .searchAutoTitle {
+    text-align: center;
+    font: 16px/39px 'FontBold';
+    color: #d52f1f;
+    text-transform: uppercase;
+    background: #fff;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.Search .searchAuto .searchAutoForm {
+    padding: 25px 18px 15px 18px;
+    position: relative;
+    height: 182px;
+    background: #e6eff1;
+}
+
+.subs {
+    margin: 0;
+    text-align: center;
+    bottom: 15px;
+    left: 0;
+    right: 0;
+}

@@ -1,13 +1,9 @@
 ﻿<html>
-<!--<script src="1.js"></script>-->
-<!--<script src="2.js"></script>-->
 <head>
 <link rel="stylesheet" type="text/css" href="lab1.css">
 </head>
 
 <body>
-
-
 	<div class="Main">
 		<div class="Header">
 			<a class="logo" href="/">
@@ -23,35 +19,267 @@
 		</div>
 		
 		<div class="Menu">
-		
+			<ul>
+				<li>Шины</li>
+				<li>Диски</li>
+				<li>Автотовары</li>
+				<li>Автохиимия</li>
+				<li>Покупателю</li>
+				<li>Оптовикам</li>
+			</ul>
 		</div>
 		
 		<div class="BigLogo">
-			
 		</div>
 		
 		<div class="OnlineMagazine">
 			<a href="/">
-			<span>
 				Войти в онлайн магазин
-			</span>
 			</a>
 		</div>
 		
 		<div class="Search">
-		
+			<div class="searchTD">
+				<div class="searchTDTitle">
+					Подбор шин
+				</div>
+				<div class="searchForm">
+					<table>
+						<tbody>
+						<tr>
+							<td>
+							<label class="labMar">
+								Типоразмер
+							</label>
+							</td>
+							<td>
+							<select data-val="true" data-val-number="The field filterWidth must be a number." id="filterWidth" name="filterWidth" style="">
+								<option value="">
+								все
+								</option>
+							</select>
+							</td>
+							<td class="ctab">
+							<label>
+								/ 
+							</label>
+							</td>
+							<td>
+							<select data-val="true" data-val-number="The field filterHeight must be a number." id="filterHeight" name="filterHeight" style="">
+								<option value="">
+								все
+								</option>
+							</select>
+							</td>
+							<td class="ctab">
+							<label>
+								R 
+							</label>
+							</td>
+							<td>
+							<select data-val="true" data-val-number="The field filterDiameter must be a number." id="filterDiameter" name="filterDiameter" style="">
+								<option value="">
+								все
+								</option>
+							</select>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="3">
+							</td>
+							<td class="customazeMargin" colspan="3">
+							<select data-val="true" data-val-number="The field filterBrand must be a number." id="filterBrand" name="filterBrand" style="">
+								<option value="">
+								все
+								</option>
+							</select>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="3">
+							Сезоны: 
+							<select data-val="true" data-val-number="The field filterSeason must be a number." id="filterSeason" name="filterSeason" style="">
+								<option value="">
+								все
+								</option>
+								<option value="101">
+								Лето
+								</option>
+								<option value="102">
+								Зима
+								</option>
+								<option value="103">
+								Всесезонная
+								</option>
+							</select>
+							</td>
+							<td colspan="3">
+							Шипы: 
+							<input id="filterSpikes" name="filterSpikes" type="checkbox" value="true">
+							<input name="filterSpikes" type="hidden" value="false">
+							</td>
+						</tr>
+						</tbody>
+					</table>
+					<div class="subs">
+						<button value="Найти" type="submit">
+						Найти
+						</button>
+					</div>
+				</div>
+			</div>
+			
+			<div class="searchTD">
+				<div class="searchTDTitle">
+					Подбор шин
+				</div>
+				<div class="searchForm">
+					<table>
+						<tbody>
+						<tr>
+							<td>
+							<label class="labMar">
+								Типоразмер
+							</label>
+							</td>
+							<td>
+							<select data-val="true" data-val-number="The field filterWidth must be a number." id="filterWidth" name="filterWidth" style="">
+								<option value="">
+								все
+								</option>
+							</select>
+							</td>
+							<td class="ctab">
+							<label>
+								/ 
+							</label>
+							</td>
+							<td>
+							<select data-val="true" data-val-number="The field filterHeight must be a number." id="filterHeight" name="filterHeight" style="">
+								<option value="">
+								все
+								</option>
+							</select>
+							</td>
+							<td class="ctab">
+							<label>
+								R 
+							</label>
+							</td>
+							<td>
+							<select data-val="true" data-val-number="The field filterDiameter must be a number." id="filterDiameter" name="filterDiameter" style="">
+								<option value="">
+								все
+								</option>
+							</select>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="3">
+							</td>
+							<td class="customazeMargin" colspan="3">
+							<select data-val="true" data-val-number="The field filterBrand must be a number." id="filterBrand" name="filterBrand" style="">
+								<option value="">
+								все
+								</option>
+							</select>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="3">
+							Сезоны: 
+							<select data-val="true" data-val-number="The field filterSeason must be a number." id="filterSeason" name="filterSeason" style="">
+								<option value="">
+								все
+								</option>
+								<option value="101">
+								Лето
+								</option>
+								<option value="102">
+								Зима
+								</option>
+								<option value="103">
+								Всесезонная
+								</option>
+							</select>
+							</td>
+							<td colspan="3">
+							Шипы: 
+							<input id="filterSpikes" name="filterSpikes" type="checkbox" value="true">
+							<input name="filterSpikes" type="hidden" value="false">
+							</td>
+						</tr>
+						</tbody>
+					</table>
+					<div class="subs">
+						<button value="Найти" type="submit">
+						Найти
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="searchAuto">
+				<div class="searchAutoTitle">
+					Подбор колес по автомобилю
+				</div>
+				<div class="searchAutoForm">
+					<ul>
+					<li>
+						<label>
+						Производитель
+						</label>
+						<select id="Brand" name="Brand">
+						<option value="">
+							--= Выберите бренд =--
+						</option>
+						<option value="187">
+							Acura
+						</option>
+						
+						</select>
+					</li>
+					<li>
+						<label>
+						Модель
+						</label>
+						<select id="Model" disabled="disabled">
+						</select>
+					</li>
+					<li>
+						<label>
+						Год
+						</label>
+						<select id="Year" disabled="disabled">
+						</select>
+					</li>
+					<li>
+						<label>
+						Двигатель
+						</label>
+						<select id="Modification" disabled="disabled">
+						</select>
+					</li>
+					</ul>
+				</div>
+				<div class="subs">
+					<button value="Найти" type="submit" id="sbmt-btn">
+					Найти
+					</button>
+				</div>
+				</div>
 		</div>
 		
 		<div class="Hits">
-		
+					
 		</div>
 		
 		<div class="Footer">
-			Copyright © 2014 PitStopUral.ru
-				<a class="genumEnter" title="Genum — создание сайтов. Екатеринбург" target="_blank" href="http://www.genum.ru/"></a>
+			<div class="Copy">
+				Copyright © 2014 PitStopUral.ru
+			</div>
+			<a class="genumEnter" title="Roman — создание сайтов" target="_blank" href="https://vk.com/r.dubinin"></a>
 		</div>
-		
-		
-
+	</div>
 </body>
 </html>
