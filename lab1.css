@@ -136,6 +136,33 @@ html {
 	border-radius: 7px;
 }
 
+.Main .BigLogo .Text{
+	margin: 40px 0 0 50px;
+	font-family: fantasy;
+}
+
+.Main .BigLogo .First{
+	color: black;
+	font-size: 45px;
+	text-transform: uppercase;
+}
+
+.Main .BigLogo .Second{
+	color: red;
+	font-size: 45px;
+	text-transform: uppercase;
+}
+
+.Main .BigLogo .Third{
+	color: black;
+	font-size: 30px;
+}
+
+.Main .BigLogo .Fourth{
+	color: red;
+	font-size: 30px;
+}
+
 .Main .OnlineMagazine {
     display: block;
     background: url("img/enterButton.jpg") no-repeat;
