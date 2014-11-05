@@ -207,7 +207,6 @@ html {
 
 
 .Search {
-    margin: 0px auto 265px;
     width: 100%;
 }
 
@@ -275,5 +274,26 @@ html {
 .subs {
     margin: 0;
     text-align: center;
-    bottom: 25px;
+	position: absolute;
+    bottom: 15px;
+	left: 110px; // говно
+}
+
+.subs button {
+height: 31px;
+width: 120px;
+border-radius: 5px;
+border: none;
+font-family: 'FontBold';
+font-size: 14px;
+color: #49555c;
+text-transform: uppercase;
+background: url("img/bts.png") no-repeat 0 0;
+line-height: 33px;
+overflow: hidden;
+}
+
+.subs button:hover{
+	background-position: 0 100%;
+
 }
