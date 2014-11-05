@@ -214,6 +214,7 @@ html {
 .Search tbody {
 font-size: 12;
 }
+
 .Search .searchTD {
     display: inline-block;
     width: 32%;
@@ -230,7 +231,7 @@ width: 100%;
 }*/
 
 .Search td.customazeMargin select {
-width: 100%;
+	width: 100%;
 }
 
 .Search .searchTD .searchTDTitle {
@@ -289,17 +290,17 @@ width: 100%;
 }
 
 .subs button {
-height: 31px;
-width: 120px;
-border-radius: 5px;
-border: none;
-font-family: 'FontBold';
-font-size: 14px;
-color: #49555c;
-text-transform: uppercase;
-background: url("img/bts.png") no-repeat 0 0;
-line-height: 33px;
-overflow: hidden;
+	height: 31px;
+	width: 120px;
+	border-radius: 5px;
+	border: none;
+	font-family: 'FontBold';
+	font-size: 14px;
+	color: #49555c;
+	text-transform: uppercase;
+	background: url("img/bts.png") no-repeat 0 0;
+	line-height: 33px;
+	overflow: hidden;
 }
 
 .subs button:hover{
@@ -307,3 +308,36 @@ overflow: hidden;
 
 }
 
+.Hits {
+	margin: 30 0 0 0;
+	padding: 15 0 0 0;
+	background: #b3d4fc;
+}
+
+.Hits .Title {
+	margin: -30px auto 0 auto;
+	width: 235px;
+	font: 16px/28px 'FontBold';
+	color: #d52f1f;
+	border: 1px solid #dbdbdb;
+	border-radius: 15px;
+	background: #fff;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.Hits .Item {
+	display: inline-block;
+	font-size: 12px;
+	margin: 10px 10px 0;
+	overflow: hidden;
+	text-align: center;
+}
+
+.Hits .Item a{
+	color: #d52f1f;
+}
+
+.Hits .Item .PriceVal{
+	font-size: 18px;
+}
