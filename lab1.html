@@ -45,7 +45,6 @@
 				</div>
 				<div class="searchForm">
 					<table>
-						<tbody>
 						<tr>
 							<td>
 							<label class="labMar">
@@ -59,7 +58,7 @@
 								</option>
 							</select>
 							</td>
-							<td class="ctab">
+							<td>
 							<label>
 								/ 
 							</label>
@@ -71,7 +70,7 @@
 								</option>
 							</select>
 							</td>
-							<td class="ctab">
+							<td>
 							<label>
 								R 
 							</label>
@@ -119,7 +118,6 @@
 							<input name="filterSpikes" type="hidden" value="false">
 							</td>
 						</tr>
-						</tbody>
 					</table>
 					<div class="subs">
 						<button value="Найти" type="submit">
@@ -135,7 +133,6 @@
 				</div>
 				<div class="searchForm">
 					<table>
-						<tbody>
 						<tr>
 							<td>
 							<label class="labMar">
@@ -209,7 +206,6 @@
 							<input name="filterSpikes" type="hidden" value="false">
 							</td>
 						</tr>
-						</tbody>
 					</table>
 					<div class="subs">
 						<button value="Найти" type="submit">
@@ -224,49 +220,58 @@
 					Подбор колес по автомобилю
 				</div>
 				<div class="searchAutoForm">
-					<ul>
-					<li>
-						<label>
-						Производитель
-						</label>
-						<select id="Brand" name="Brand">
-						<option value="">
-							--= Выберите бренд =--
-						</option>
-						<option value="187">
-							Acura
-						</option>
-						
-						</select>
-					</li>
-					<li>
-						<label>
-						Модель
-						</label>
-						<select id="Model" disabled="disabled">
-						</select>
-					</li>
-					<li>
-						<label>
-						Год
-						</label>
-						<select id="Year" disabled="disabled">
-						</select>
-					</li>
-					<li>
-						<label>
-						Двигатель
-						</label>
-						<select id="Modification" disabled="disabled">
-						</select>
-					</li>
-					</ul>
+					<table>
+					<tr>
+						<td>
+							<label>
+							Производитель
+							</label>
+							<select id="Brand" name="Brand">
+							<option value="">
+								--= Выберите бренд =--
+							</option>
+							<option value="187">
+								Acura
+							</option>
+							
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>
+							Модель
+							</label>
+							<select id="Model" disabled="disabled">
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>
+							Год
+							</label>
+							<select id="Year" disabled="disabled">
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>
+							Двигатель
+							</label>
+							<select id="Modification" disabled="disabled">
+							</select>
+						</td>
+					</tr>
+					</table>
+					<div class="subs">
+						<button value="Найти" type="submit" id="sbmt-btn">
+						Найти
+						</button>
+					</div>
 				</div>
-				<div class="subs">
-					<button value="Найти" type="submit" id="sbmt-btn">
-					Найти
-					</button>
-				</div>
+				
 				</div>
 		</div>
 		

@@ -107,9 +107,9 @@ html {
 
 .Main .Menu li {
 	
-	display: inline;
-	padding: 10px 40 0 40;
-	margin: 0 0 0 0;
+	display: inline-block;
+	padding: 10px 4% 0;
+
 }
 
 
@@ -205,6 +205,7 @@ html {
     border-radius: 10px;
     border: 1px solid #dbdbdb;
     font: 12px/12px 'Verdana';
+	overflow: hidden;
 }
 
 
@@ -235,6 +236,7 @@ html {
     border-radius: 10px;
     border: 1px solid #dbdbdb;
     font: 12px/12px 'Verdana';
+	overflow: hidden;
 }
 
 
@@ -258,7 +260,5 @@ html {
 .subs {
     margin: 0;
     text-align: center;
-    bottom: 15px;
-    left: 0;
-    right: 0;
+    bottom: 25px;
 }
