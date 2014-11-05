@@ -62,12 +62,10 @@
 					<table>
 						<tr>
 							<td>
-							<label class="labMar">
 								Типоразмер
-							</label>
 							</td>
 							<td>
-							<select data-val="true" data-val-number="The field filterWidth must be a number." id="filterWidth" name="filterWidth" style="">
+							<select>
 								<option value="">
 								все
 								</option>
@@ -79,7 +77,7 @@
 							</label>
 							</td>
 							<td>
-							<select data-val="true" data-val-number="The field filterHeight must be a number." id="filterHeight" name="filterHeight" style="">
+							<select>
 								<option value="">
 								все
 								</option>
@@ -91,7 +89,7 @@
 							</label>
 							</td>
 							<td>
-							<select data-val="true" data-val-number="The field filterDiameter must be a number." id="filterDiameter" name="filterDiameter" style="">
+							<select>
 								<option value="">
 								все
 								</option>
@@ -102,7 +100,7 @@
 							<td colspan="3">
 							</td>
 							<td class="customazeMargin" colspan="3">
-							<select data-val="true" data-val-number="The field filterBrand must be a number." id="filterBrand" name="filterBrand" style="">
+							<select data-val="true">
 								<option value="">
 								все
 								</option>
@@ -111,26 +109,22 @@
 						</tr>
 						<tr>
 							<td colspan="3">
-							Сезоны: 
-							<select data-val="true" data-val-number="The field filterSeason must be a number." id="filterSeason" name="filterSeason" style="">
-								<option value="">
-								все
-								</option>
-								<option value="101">
+								<input id="filterSpikes" name="filterSpikes" type="checkbox" value="true">
 								Лето
-								</option>
-								<option value="102">
-								Зима
-								</option>
-								<option value="103">
-								Всесезонная
-								</option>
-							</select>
 							</td>
 							<td colspan="3">
-							Шипы: 
-							<input id="filterSpikes" name="filterSpikes" type="checkbox" value="true">
-							<input name="filterSpikes" type="hidden" value="false">
+								<input id="filterSpikes" name="filterSpikes" type="checkbox" value="true">
+								Зима(Нешипуемые)
+							</td>
+						</tr>
+						<tr>
+							<td colspan="3">
+								<input id="filterSpikes" name="filterSpikes" type="checkbox" value="true">
+								Всесезонные
+							</td>
+							<td colspan="3">
+								<input id="filterSpikes" name="filterSpikes" type="checkbox" value="true">
+								Зима(с шипами)
 							</td>
 						</tr>
 					</table>
@@ -144,42 +138,29 @@
 			
 			<div class="searchTD">
 				<div class="searchTDTitle">
-					Подбор шин
+					Подбор дисков
 				</div>
 				<div class="searchForm">
 					<table>
 						<tr>
 							<td>
-							<label class="labMar">
-								Типоразмер
-							</label>
+								Ширина
 							</td>
 							<td>
-							<select data-val="true" data-val-number="The field filterWidth must be a number." id="filterWidth" name="filterWidth" style="">
+							<select>
 								<option value="">
 								все
 								</option>
 							</select>
 							</td>
-							<td class="ctab">
-							<label>
-								/ 
-							</label>
+							<td>
+								Диаметр
 							</td>
 							<td>
-							<select data-val="true" data-val-number="The field filterHeight must be a number." id="filterHeight" name="filterHeight" style="">
-								<option value="">
-								все
-								</option>
-							</select>
-							</td>
-							<td class="ctab">
-							<label>
-								R 
-							</label>
+							    
 							</td>
 							<td>
-							<select data-val="true" data-val-number="The field filterDiameter must be a number." id="filterDiameter" name="filterDiameter" style="">
+							<select>
 								<option value="">
 								все
 								</option>
@@ -187,38 +168,37 @@
 							</td>
 						</tr>
 						<tr>
-							<td colspan="3">
+							<td colspan="2">
+								Крепёжные отверстия
+							</td>
+							<td>
+							<select>
+								<option>
+									все
+								</option>
+							</select>
+							</td>
+							<td>
+								Х
+							</td>
+							<td>
+							<select>
+								<option>
+									все
+								</option>
+							</select>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								Фирма-производитель
 							</td>
 							<td class="customazeMargin" colspan="3">
-							<select data-val="true" data-val-number="The field filterBrand must be a number." id="filterBrand" name="filterBrand" style="">
-								<option value="">
-								все
+							<select>
+								<option>
+									все
 								</option>
 							</select>
-							</td>
-						</tr>
-						<tr>
-							<td colspan="3">
-							Сезоны: 
-							<select data-val="true" data-val-number="The field filterSeason must be a number." id="filterSeason" name="filterSeason" style="">
-								<option value="">
-								все
-								</option>
-								<option value="101">
-								Лето
-								</option>
-								<option value="102">
-								Зима
-								</option>
-								<option value="103">
-								Всесезонная
-								</option>
-							</select>
-							</td>
-							<td colspan="3">
-							Шипы: 
-							<input id="filterSpikes" name="filterSpikes" type="checkbox" value="true">
-							<input name="filterSpikes" type="hidden" value="false">
 							</td>
 						</tr>
 					</table>
@@ -238,44 +218,46 @@
 					<table>
 					<tr>
 						<td>
-							<label>
 							Производитель
-							</label>
-							<select id="Brand" name="Brand">
-							<option value="">
-								--= Выберите бренд =--
-							</option>
-							<option value="187">
-								Acura
-							</option>
-							
+						</td>
+						<td	class="customazeMargin">
+							<select>
+								<option>
+									--= Выберите бренд =--
+								</option>
+								<option>
+									Acura
+								</option>
 							</select>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<label>
 							Модель
-							</label>
-							<select id="Model" disabled="disabled">
+						</td>
+						<td class="customazeMargin">
+							<select>
 							</select>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<label>
 							Год
-							</label>
-							<select id="Year" disabled="disabled">
+						</td>
+						<td	class="customazeMargin">
+							<select>
+								<option>
+									все
+								</option>
 							</select>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<label>
 							Двигатель
-							</label>
-							<select id="Modification" disabled="disabled">
+						</td>
+						<td	class="customazeMargin">
+							<select>
 							</select>
 						</td>
 					</tr>

@@ -208,9 +208,12 @@ html {
 
 .Search {
     width: 100%;
+	font: 12px/12px 'Verdana';
 }
 
-
+.Search tbody {
+font-size: 12;
+}
 .Search .searchTD {
     display: inline-block;
     width: 32%;
@@ -222,7 +225,13 @@ html {
 	overflow: hidden;
 }
 
+/*.Search td {
+width: 100%;
+}*/
 
+.Search td.customazeMargin select {
+width: 100%;
+}
 
 .Search .searchTD .searchTDTitle {
     text-align: center;
@@ -297,3 +306,4 @@ overflow: hidden;
 	background-position: 0 100%;
 
 }
+
