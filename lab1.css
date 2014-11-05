@@ -35,6 +35,7 @@ html {
 .Footer .Copy{
 	margin: 10px 0 0 10px;
 	display: block;
+	text-align: left;
 }
 
 .Main.OnlineMagazine{
@@ -68,16 +69,20 @@ html {
     background: url("img/phoneIcon.png") no-repeat 0 1px;
     padding: 0px 0px 0px 30px;
     font: 20px/22px 'FontMedium';
-    top: 50px;
+    top: 30px;
 	left: 600px;
 	position: absolute;
+}
+
+.Main .Header .topPhone .bigPhone{
+	font-size:23px;
 }
 
 .Main .Header .topBucket {
     background: url("img/bucketIcon.png") no-repeat;
     padding: 0px 0px 0px 30px;
     font: 20px/22px 'FontMedium';
-    top: 75px;
+    top: 55px;
 	left: 600px;
 	position: absolute;
 }
@@ -97,7 +102,7 @@ html {
 	height: 58px; 
 	margin: 0 0 20 0;
 	border-radius: 7px;
-
+	padding: 1px 0 0;
 }
 
 .Main .Menu ul {
@@ -106,10 +111,20 @@ html {
 }
 
 .Main .Menu li {
-	
 	display: inline-block;
-	padding: 10px 4% 0;
+	padding: 5px 4%;
+	border-right: 1px dashed #ec9890;
+	margin-top: 10px;
+}
 
+.Main .Menu li.last{
+	border-right: none;
+}
+
+.Main .Menu li a{
+	color: white;
+	font-size: 18px;
+	text-decoration: none;
 }
 
 
