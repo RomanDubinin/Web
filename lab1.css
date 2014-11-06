@@ -1,41 +1,9 @@
-
 html {
     background: #fff;
     color: #000;
     font-size: 100%;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
-}
-
-
-.Footer{
-    width: 100%;
-	display: block;
-    margin: 0;
-    text-align: center;
-    font: 11px 'Tahoma';
-    color: #474b4d;
-}
-
-.genumEnter {
-	display: block;
-    margin: 20px auto 0;
-    white-space: nowrap;
-    text-indent: 9999em;
-    overflow: hidden;
-    width: 60px;
-    height: 26px;
-    background: url("img/genum.png") no-repeat;
-}
-
-.genumEnter:hover {
-    background-position: 100% 0;
-}
-
-.Footer .Copy{
-	margin: 10px 0 0 10px;
-	display: block;
-	text-align: left;
 }
 
 .Main.OnlineMagazine{
@@ -127,7 +95,6 @@ html {
 	text-decoration: none;
 }
 
-
 .Main .BigLogo{
 	background: url("img/покрышка.jpg");
 	width: 100%;
@@ -183,66 +150,16 @@ html {
     color: #00008b;
 }
 
-
-
-
-
-
-#bannersContainerSlider {
-    position: relative;
-    width: 1064px;
-    height: 240px;
-}
-
-#pagerSlide {
-    bottom: 10px;
-    left: 0;
-    right: 0;
-    position: absolute;
-    z-index: 100000;
-    margin: 0 auto;
-    width: 150px;
-    text-align: center;
-}
-
-#pagerSlide a {
-    border: 2px solid #c4d8dc;
-    border-radius: 10px;
-    background: #fff;
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    margin: 0 5px 0 0;
-}
-
-#pagerSlide a:hover {
-    background: #a1a8a2;
-}
-
-#pagerSlide a span {
-    display: none;
-}/*не писать циферки*/
-
-#pagerSlide a.selected {
-    background-color: #a1a8a2;
-    border: 2px solid #a1a8a2;
-}
-
-
-
-
-
-
-.Search {
+.Main .Search {
     width: 100%;
 	font: 12px/12px 'Verdana';
 }
 
-.Search tbody {
+.Main .Search tbody {
 font-size: 12;
 }
 
-.Search .searchTD {
+.Main .Search .searchTD {
     display: inline-block;
     width: 32%;
     height: 262px;
@@ -257,11 +174,11 @@ font-size: 12;
 width: 100%;
 }*/
 
-.Search td.customazeMargin select {
+.Main .Search td.customazeMargin select {
 	width: 100%;
 }
 
-.Search .searchTD .searchTDTitle {
+.Main .Search .searchTD .searchTDTitle {
     text-align: center;
     font: 16px/39px 'FontBold';
     color: #303134;
@@ -272,14 +189,14 @@ width: 100%;
 }
 
 
-.Search .searchTD .searchForm {
+.Main .Search .searchTD .searchForm {
     padding: 25px 18px 15px 18px;
     position: relative;
     height: 182px;
 }
 
 
-.Search .searchAuto {
+.Main .Search .searchAuto {
     display: inline-block;
     width: 33%;
     height: 262px;
@@ -291,7 +208,7 @@ width: 100%;
 }
 
 
-.Search .searchAuto .searchAutoTitle {
+.Main .Search .searchAuto .searchAutoTitle {
     text-align: center;
     font: 16px/39px 'FontBold';
     color: #d52f1f;
@@ -301,14 +218,14 @@ width: 100%;
     border-bottom: 1px solid #dbdbdb;
 }
 
-.Search .searchAuto .searchAutoForm {
+.Main .Search .searchAuto .searchAutoForm {
     padding: 25px 18px 15px 18px;
     position: relative;
     height: 182px;
     background: #e6eff1;
 }
 
-.subs {
+.Main .Search .subs {
     margin: 0;
     text-align: center;
 	position: absolute;
@@ -316,7 +233,7 @@ width: 100%;
 	left: 110px; // говно
 }
 
-.subs button {
+.Main .Search .subs button {
 	height: 31px;
 	width: 120px;
 	border-radius: 5px;
@@ -330,18 +247,19 @@ width: 100%;
 	overflow: hidden;
 }
 
-.subs button:hover{
+.Main .Search .subs button:hover{
 	background-position: 0 100%;
 
 }
 
-.Hits {
+.Main .Hits {
 	margin: 30 0 0 0;
 	padding: 15 0 0 0;
 	background: #b3d4fc;
+	text-align: center;
 }
 
-.Hits .Title {
+.Main .Hits .Title {
 	margin: -30px auto 0 auto;
 	width: 235px;
 	font: 16px/28px 'FontBold';
@@ -353,18 +271,47 @@ width: 100%;
 	text-transform: uppercase;
 }
 
-.Hits .Item {
+.Main .Hits .Item {
 	display: inline-block;
 	font-size: 12px;
 	margin: 10px 10px 0;
 	overflow: hidden;
-	text-align: center;
 }
 
-.Hits .Item a{
+.Main .Hits .Item a{
 	color: #d52f1f;
 }
 
-.Hits .Item .PriceVal{
+.Main .Hits .Item .PriceVal{
 	font-size: 18px;
+}
+
+.Main .Footer{
+    width: 100%;
+	display: block;
+    margin: 0;
+    text-align: center;
+    font: 11px 'Tahoma';
+    color: #474b4d;
+}
+
+.Main .Footer .genumEnter {
+	display: block;
+    margin: 20px auto 0;
+    white-space: nowrap;
+    text-indent: 9999em;
+    overflow: hidden;
+    width: 60px;
+    height: 26px;
+    background: url("img/genum.png") no-repeat;
+}
+
+.Main .Footer .genumEnter:hover {
+    background-position: 100% 0;
+}
+
+.Main .Footer .Copy{
+	margin: 10px 0 0 10px;
+	display: block;
+	text-align: left;
 }
