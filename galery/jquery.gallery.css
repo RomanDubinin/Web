@@ -1,0 +1,32 @@
+.gallery{overflow:hidden;position:relative; height: 300}
+.gallery .carusel{position:relative;width:60000px;}
+.gallery .carusel a{float:left;margin-right:5px;height:auto;}
+.gallery .prev,
+.gallery .next,
+.gallery .navigation{
+	position:absolute;
+	left:0px;
+	z-index:19;
+	width:5%; 
+	background:url(buttons/l.png) no-repeat;
+	background-position: 50% 50%;
+	height:100%;
+	cursor:pointer;
+}
+.gallery .next{
+	left:95%;
+	background-image:url(buttons/r.png);
+}
+
+/* .vkl3 > br,
+.vkl3 > a:nth-of-type(2),
+.vkl3 > br:target ~ a:nth-of-type(1) {display:none;}
+
+.vkl3 > br {position:fixed;}
+
+.vkl3 > br:target ~ a:nth-of-type(2) {display: block;}
+
+#gallery2 a{position:relative;display:block;float:left;width:288px;height:288px;text-decoration:none}
+#gallery2 a:hover{z-index:100;display:inline}
+#gallery2 a img{padding:0px;background:#f0f0f0;border:solid 1px #ddd;position:absolute;left:0;top:0;-ms-interpolation-mode:bicubic}
+#gallery2 a:hover img{left:0px;top:-40px;width:420px;height:300px} */
