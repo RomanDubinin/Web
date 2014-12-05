@@ -17,6 +17,7 @@
 			}else $carusel.stop().animate({'marginLeft':'0px'},speed,easing)
 		}
 	}
+	
 	var caruselWidth = function(){
 		var w = 0;
 		$items.each(function(){
@@ -24,6 +25,38 @@
 		})
 		return w;
 	}
+	
+	$('.display, .close').on("click", function(e) {
+    
+    $('.display')
+        .fadeOut();
+
+    $('.bigImg')
+        .fadeOut();
+
+});
+	
+	$('.photo').on("click", function(e) {
+    $('.display')
+        .show()
+        .css('opacity', 0)
+        .animate({
+            'opacity': '0.7'
+        }, 'slow');
+
+    $('.bigImg')
+        .show(700);
+
+    var addr = e.target.src;
+    $('.loader').css('display','block');
+    $('.bImg').attr('src', addr);
+    $('.bImg').load(function (){
+        $('.loader').css('display','none');
+    });
+
+
+});
+	
 	var galleryWidth = 0; // ширина самой галлереи
 	var shag = 700; // при каждом шаге будем двигать карусель на 100 пиксел
 	var speed = 200; // время в миллисекундах, за которое галерея пройдет 1 шаг, т.е. сдвинется на shag или 200px
@@ -36,12 +69,18 @@
 		$carusel = $gallery.find('.carusel');// находим в ней карусель
 		$items = $carusel.find('a');
 		galleryWidth = $gallery.width()
-		$gallery.find('div.next,div.prev').hover(function(){
+		$gallery.find('div.next,div.prev')
+		.hover(function(){
 			$(this).stop().animate({'opacity':'0.8'},400);
-		},function(){
+			},function(){
 			$(this).stop().animate({'opacity':'0.5'},400);
-		}).click(function(){
+			})
+			.click(function(){
 			step(this.className=='next'?1:-1,shag,speed,'linear');
 		})
+		
+		
 	})
+	
+	
 })(jQuery);
