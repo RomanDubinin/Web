@@ -49,8 +49,8 @@
 
     var addr = e.target.src;
     $('.loader').css('display','block');
-    $('.bImg').attr('src', addr);
-    $('.bImg').load(function (){
+    $('.bigImgSrc').attr('src', addr);
+    $('.bigImgSrc').load(function (){
         $('.loader').css('display','none');
     });
 
