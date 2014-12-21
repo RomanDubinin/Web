@@ -10,7 +10,7 @@ namespace Forum
 	{
 		static void Main(string[] args)
 		{
-			using (var db = new Entities())
+			using (var db = new ForumDbEntities())
 			{
 				//var role = new Role{RoleId = 0, RoleName = "lox"};
 				var user = new User {UserName = "name1", Roles = {db.Roles.Find(1)}};
