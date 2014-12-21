@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="291aae1e17d04395a37449a1af962ced" Name="Diagram1">
+      <Diagram DiagramId="f73d014561a44f55aa2ff14d38e31c93" Name="Diagram1">
         <EntityTypeShape EntityType="ForumDbModel.Role" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ForumDbModel.User" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
         <AssociationConnector Association="ForumDbModel.UserRole" ManuallyRouted="false" />
