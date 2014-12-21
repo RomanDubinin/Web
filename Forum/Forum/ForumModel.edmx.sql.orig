@@ -2,13 +2,21 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 12/21/2014 23:39:33
--- Generated from EDMX file: D:\Repositories\Web\Forum\Forum\ForumModel.edmx
+<<<<<<< HEAD
+-- Date Created: 12/21/2014 14:39:18
+=======
+-- Date Created: 12/21/2014 22:54:48
+>>>>>>> tmp
+-- Generated from EDMX file: C:\Study\Web\Forum\Forum\ForumModel.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-USE [tempdb];
+<<<<<<< HEAD
+USE [ForumDb];
+=======
+USE [ForumDB2];
+>>>>>>> tmp
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO

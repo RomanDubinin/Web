@@ -8,6 +8,11 @@
         <EntityTypeShape EntityType="ForumDbModel.Role" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ForumDbModel.User" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
         <AssociationConnector Association="ForumDbModel.UserRole" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ForumDbModel.Conversation" Width="1.5" PointX="3.875" PointY="4" />
+        <AssociationConnector Association="ForumDbModel.ConversationUser" />
+        <EntityTypeShape EntityType="ForumDbModel.Message" Width="1.5" PointX="7.75" PointY="1" />
+        <AssociationConnector Association="ForumDbModel.MessageUser" />
+        <AssociationConnector Association="ForumDbModel.MessageConversation" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
