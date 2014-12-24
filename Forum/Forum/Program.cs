@@ -49,8 +49,8 @@ namespace Forum
 		{
 			using (db = new ForumDbEntities())
 			{
-				CreateRole("SimpleUser");
-				CreateRole("SuperUser");
+				//CreateRole("SimpleUser");
+				//CreateRole("SuperUser");
 				simpleUser = db.Roles.Find(1);
 				superUser = db.Roles.Find(2);
 
