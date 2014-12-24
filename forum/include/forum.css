@@ -1,0 +1,88 @@
+Body
+{
+	margin:0px 0px 0px 0px;
+	padding:0px 0px 0px 0px;
+}
+.ForumText
+{
+	font-weight:normal;
+	font-family:Verdana,Arial;
+	font-size:8pt;
+}
+.ForumCaption
+{
+	font-weight:bold;
+	font-family:Verdana,Arial;
+	font-size:8pt;
+	background-color:darkgray;	
+}
+.PagesBody
+{
+	font-family:Verdana,Arial;
+	font-size:8pt;
+	background-color:#f0f0f0;
+	border-top:solid 1px #A9A9A9;
+	margin:0 0 0 0;
+}
+.SelectedPost
+{
+	font-family:Arial; 
+	font-size:9pt; 
+	font-weight:normal; 
+	color:#000000; 
+	background:whitesmoke;		
+	border-color:#a9a9a9; 		
+	border-style:solid; 
+	border-width:1px; 
+	padding-left:0px;
+	cursor:pointer;
+}
+
+
+.ButtonItem 
+{
+	color:darkblue;
+	text-decoration:underline;
+	font-size:8pt;
+	font-family:Verdana,Arial;
+	font-weight:normal;
+	border:none;
+	background-color:#f0f0f0;
+	cursor:pointer;
+}
+
+.TreeRoot
+{
+	font-family:Arial; 
+	font-size:9pt; 
+	font-weight:normal; 
+	font-style:normal;		
+	text-decoration: none;
+	border-width:1px; 
+	border-style:solid; 
+	border-color:white;
+	color:#000000;
+}
+.TreeHover 
+{ 	
+	font-family:Arial; 
+	font-size:9pt; 
+	font-weight: normal; 
+	font-style:normal;	
+	background:#d7d7d7;		
+	border-color:#A9A9A9; 		
+	border-style:solid; 
+	border-width:1px; 
+	cursor:pointer;
+	cursor:hand
+}
+
+.RateBody
+{
+	font-family:Verdana,Arial;
+	font-size:8pt;
+	background-color:#f0f0f0;
+	border-top:solid 1px #A9A9A9;
+	border-bottom:solid 1px #A9A9A9;
+	margin:0 0 0 0;	
+}

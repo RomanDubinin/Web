@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title></title>
+		<meta name="GENERATOR" content="Microsoft Visual Studio .NET 7.1">
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+	</head>
+	<body>
+		<P><STRONG><FONT size="6">Пособие по установке демонстрационного проекта</FONT></STRONG></P>
+		<P>Для тестирования проекта&nbsp;у вас в системе должны быть установлены IIS, .NET 
+			Framework 1.1, MS SQL Server любой редакции (например, MSDE). Также желательно, 
+			чтобы были установлены Client tools for MS SQL Server и Visual Studio .NET 
+			2003.</P>
+		<P>1. Создайте папку с произвольным названием в директории InetPub/wwwroot и 
+			скопируйте туда файлы проекта.</P>
+		<P>2. Создайте виртуальный псевдоним для этой папки - forum.</P>
+		<P>3. При наличии установленных client tools загрузите скрипт (forumdb.sql) в Query 
+			Analizer и создайте базу данных.</P>
+		<P>4. Пропишите в файле web.config из числа файлов проекта логин и пароль 
+			администратора базы в разделе AppSettings в ключе ConnectionString.</P>
+		<P>5. После этого вы сможете загрузить проект через браузер, набрав в адресной 
+			сроке <A href="http://localhost/forum">http://localhost/forum</A></P>
+		<P>6. Для загрузки проекта в Visual Studio .NET 2003 вы должны создать solution для 
+			web-проекта и подредактировать сам файл солюшина, указав в нем путь к 
+			виртуальной папке проекта (<A href="http://localhost/forum">http://localhost/forum</A>).</P>
+	</body>
+</html>
