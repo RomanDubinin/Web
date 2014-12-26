@@ -1,0 +1,71 @@
+﻿@model LessonProject.Models.ViewModels.UserView
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Register</h2>
+@using (Html.BeginForm("Register", "User", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.ValidationSummary()
+
+    <fieldset>
+        <div class="control-group">
+            <label class="control-label" for="Email">
+                Email
+            </label>
+            <div class="controls">
+                @Html.ValidationMessage("Email")
+                @Html.TextBox("Email", Model.Email)
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="FirstName">
+                Password
+            </label>
+            <div class="controls">
+                @Html.ValidationMessage("Password")
+                @Html.Password("Password", Model.Password)
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="FirstName">
+                Confirm Password
+            </label>
+            <div class="controls">
+                @Html.ValidationMessage("ConfirmPassword")
+                @Html.Password("ConfirmPassword", Model.ConfirmPassword)
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="FirstName">
+                Birth date
+            </label>
+            <div class="controls">
+                @Html.DropDownList("BirthdateDay", Model.BirthdateDaySelectList)
+                @Html.DropDownList("BirthdateMonth", Model.BirthdateMonthSelectList)
+                @Html.DropDownList("BirthdateYear", Model.BirthdateYearSelectList)
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="FirstName">
+                Captcha
+            </label>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="FirstName">
+                <img src="@Url.Action("Captcha", "User")" alt="captcha" />
+            </label>
+            <div class="controls">
+                @Html.ValidationMessage("Captcha")
+                @Html.TextBox("Captcha", Model.Captcha)
+            </div>
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+                Register
+            </button>
+            @Html.ActionLink("Cancel", "Index", null, null, new { @class = "btn" })
+        </div>
+    </fieldset>
+}
