@@ -2,16 +2,15 @@
 
 namespace LessonProject.Areas.Default.Controllers
 {
-    public class HomeController : DefaultController
+    public class TopicsController : Controller
     {
+        //
+        // GET: /Default/Themes/
+
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult UserLogin()
-        {
-            return View(CurrentUser);
-        }
     }
 }
