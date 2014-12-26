@@ -54,5 +54,16 @@ namespace LessonProject.Model.Properties {
                 return ((string)(this["LessonProjectConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\v11.0;AttachDbFilename=|DataDirectory|\\forum6.mdf;Initial C" +
+            "atalog=LessonProject;Integrated Security=True;Pooling=False")]
+        public string LessonProjectConnectionString2 {
+            get {
+                return ((string)(this["LessonProjectConnectionString2"]));
+            }
+        }
     }
 }

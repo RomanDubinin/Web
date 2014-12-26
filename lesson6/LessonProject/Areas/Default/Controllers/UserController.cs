@@ -42,7 +42,7 @@ namespace LessonProject.Areas.Default.Controllers
 				var user = (User) ModelMapper.Map(userView, typeof(UserView), typeof(User));
 
 				Repository.CreateUser(user);
-				var userRole = new UserRole {UserID = user.Id, RoleID = 1};
+				var userRole = new UserRole {UserId = user.Id, RoleId = 1};
 				Repository.CreateUserRole(userRole);
 				return RedirectToAction("Index");
 			}

@@ -148,6 +148,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Default\Controllers\DefaultController.cs" />
     <Compile Include="Areas\Default\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Default\Controllers\MessagesController.cs" />
     <Compile Include="Areas\Default\Controllers\TopicsController.cs" />
     <Compile Include="Areas\Default\DefaultAreaRegistration.cs" />
     <Compile Include="Attribute\Validation\ValidEmail.cs" />
@@ -207,6 +208,7 @@
     <Content Include="Areas\Default\Views\Login\Index.cshtml" />
     <Content Include="Areas\Default\Views\Home\UserLogin.cshtml" />
     <Content Include="Areas\Default\Views\Topics\Index.cshtml" />
+    <Content Include="Areas\Default\Views\Messages\Index.cshtml" />
     <None Include="Scripts\jquery-1.6.2-vsdoc.js" />
     <Content Include="Scripts\jquery-1.6.2.js" />
     <Content Include="Scripts\jquery-1.6.2.min.js">

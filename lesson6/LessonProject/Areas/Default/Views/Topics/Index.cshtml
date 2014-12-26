@@ -9,5 +9,6 @@
 
 @for(int i = 0; i < Model.Count; i++)
 {
-    <li>@Model[i].Name</li>
+    @Html.ActionLink(@Model[i].Name, "Index", "Messages", new { topicId = @Model[i].Id }, null)
+
 }
