@@ -1,6 +1,13 @@
-﻿@{
+﻿@model IList<LessonProject.Model.Topic>
+
+@{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
 }
 
 <h2>there are will be topics</h2>
+
+@for(int i = 0; i < Model.Count; i++)
+{
+    <li>@Model[i].Name</li>
+}
