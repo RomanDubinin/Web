@@ -30,7 +30,7 @@ namespace LessonProject.Model
         public bool UpdateRole(Role instance)
         {
             Role cache = Db.Roles.FirstOrDefault(p => p.Id == instance.Id);
-            if (instance.Id == 0)
+			if (cache != null)
             {
                 cache.Name = instance.Name;
                 cache.Code = instance.Code;
