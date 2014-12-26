@@ -58,7 +58,9 @@
     </Compile>
     <Compile Include="Proxy\User.cs" />
     <Compile Include="SqlRepository.cs" />
+    <Compile Include="SqlRepository\Message.cs" />
     <Compile Include="SqlRepository\Role.cs" />
+    <Compile Include="SqlRepository\Topic.cs" />
     <Compile Include="SqlRepository\User.cs" />
     <Compile Include="SqlRepository\UserRole.cs" />
   </ItemGroup>

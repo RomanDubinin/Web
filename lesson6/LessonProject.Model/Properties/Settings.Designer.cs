@@ -43,5 +43,16 @@ namespace LessonProject.Model.Properties {
                 return ((string)(this["tempdbConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\v11.0;Initial Catalog=LessonProject;Integrated Security=Tru" +
+            "e")]
+        public string LessonProjectConnectionString1 {
+            get {
+                return ((string)(this["LessonProjectConnectionString1"]));
+            }
+        }
     }
 }

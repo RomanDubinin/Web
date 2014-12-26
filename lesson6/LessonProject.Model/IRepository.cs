@@ -46,5 +46,31 @@ namespace LessonProject.Model
         bool RemoveUserRole(int idUserRole);
 
         #endregion 
+
+		#region Topic
+
+		IQueryable<Topic> Topics { get; }
+
+		bool CreateTopic(Topic instance);
+
+		bool UpdateTopic(Topic instance);
+
+		bool RemoveTopic(int idTopic);
+
+		Topic GetTopic(int idTopic);
+
+		#endregion 
+
+		#region Message
+
+		IQueryable<Message> Messages { get; }
+
+		bool CreateMessage(Message instance);
+
+		bool RemoveMessage(int idMessage);
+
+		Message GetMessage(int idMessage);
+
+		#endregion 
     }
 }
