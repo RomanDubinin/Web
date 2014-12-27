@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using LessonProject.Global.Auth;
+using LessonProject.Global.UserContext;
 using LessonProject.Mappers;
 using LessonProject.Model;
 using Ninject;
@@ -20,6 +21,9 @@ namespace LessonProject.Controllers
 
         [Inject]
         public IAuthentication Auth { get; set; }
+
+		[Inject]
+		public IUserContext UserContext { get; set; }
 
         public User CurrentUser
         {

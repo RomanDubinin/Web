@@ -166,6 +166,8 @@
     <Compile Include="Global\Auth\IUserProvider.cs" />
     <Compile Include="Global\Auth\UserIdentity.cs" />
     <Compile Include="Global\Auth\UserProvider.cs" />
+    <Compile Include="Global\UserContext\IUserContext.cs" />
+    <Compile Include="Global\UserContext\UserContext.cs" />
     <Compile Include="Mappers\CommonMapper.cs" />
     <Compile Include="Mappers\IMapper.cs" />
     <Compile Include="Models\ViewModels\LoginView.cs" />
