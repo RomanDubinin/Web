@@ -29,9 +29,10 @@ namespace LessonProject.Areas.Default.Controllers
 		private MessagesPageConfig CreatePageConfig()
 		{
 			var messages = Repository.Messages.Where(m => m.TopicId == UserContext.CurrentTopic).ToList();
+			var topicName = Repository.Topics.First(m => m.Id == UserContext.CurrentTopic).Name;
 			var pageConf = new MessagesPageConfig
 			{
-				Topic = messages.First().Topic.Name,
+				Topic = topicName,
 				Messages = messages,
 				RightToAccess = UserRights
 			};

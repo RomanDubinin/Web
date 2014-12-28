@@ -1,9 +1,11 @@
 ﻿@model LessonProject.Model.PageConfiguration.MessagesPageConfig
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "придумай заголовки всем страницам";
     Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
 }
+
+<h2>@Model.Topic</h2>
 
 @foreach(var message in Model.Messages)
 {
