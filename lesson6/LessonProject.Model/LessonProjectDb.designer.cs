@@ -30,21 +30,21 @@ namespace LessonProject.Model
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertUser(User instance);
-    partial void UpdateUser(User instance);
-    partial void DeleteUser(User instance);
+    partial void InsertMessage(Message instance);
+    partial void UpdateMessage(Message instance);
+    partial void DeleteMessage(Message instance);
     partial void InsertRole(Role instance);
     partial void UpdateRole(Role instance);
     partial void DeleteRole(Role instance);
     partial void InsertTopic(Topic instance);
     partial void UpdateTopic(Topic instance);
     partial void DeleteTopic(Topic instance);
-    partial void InsertMessage(Message instance);
-    partial void UpdateMessage(Message instance);
-    partial void DeleteMessage(Message instance);
     partial void InsertUserRole(UserRole instance);
     partial void UpdateUserRole(UserRole instance);
     partial void DeleteUserRole(UserRole instance);
+    partial void InsertUser(User instance);
+    partial void UpdateUser(User instance);
+    partial void DeleteUser(User instance);
     #endregion
 		
 		public LessonProjectDbDataContext() : 
@@ -77,11 +77,11 @@ namespace LessonProject.Model
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<User> Users
+		public System.Data.Linq.Table<Message> Messages
 		{
 			get
 			{
-				return this.GetTable<User>();
+				return this.GetTable<Message>();
 			}
 		}
 		
@@ -101,52 +101,42 @@ namespace LessonProject.Model
 			}
 		}
 		
-		public System.Data.Linq.Table<Message> Messages
-		{
-			get
-			{
-				return this.GetTable<Message>();
-			}
-		}
-		
-		public System.Data.Linq.Table<UserRole> UserRole
+		public System.Data.Linq.Table<UserRole> UserRoles
 		{
 			get
 			{
 				return this.GetTable<UserRole>();
 			}
 		}
+		
+		public System.Data.Linq.Table<User> Users
+		{
+			get
+			{
+				return this.GetTable<User>();
+			}
+		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[User]")]
-	public partial class User : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Message")]
+	public partial class Message : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _Id;
 		
-		private string _Email;
+		private string _Statement;
 		
-		private string _Password;
+		private int _UserId;
 		
 		private System.DateTime _AddedDate;
 		
-		private System.Nullable<System.DateTime> _ActivatedDate;
+		private int _TopicId;
 		
-		private string _ActivatedLink;
+		private EntityRef<Topic> _Topic;
 		
-		private string _LastVisitDate;
-		
-		private string _AvatarPath;
-		
-		private System.DateTime _Birthdate;
-		
-		private EntitySet<Topic> _Topics;
-		
-		private EntitySet<Message> _Messages;
-		
-		private EntitySet<UserRole> _UserRoles;
+		private EntityRef<User> _User;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -154,29 +144,20 @@ namespace LessonProject.Model
     partial void OnCreated();
     partial void OnIdChanging(int value);
     partial void OnIdChanged();
-    partial void OnEmailChanging(string value);
-    partial void OnEmailChanged();
-    partial void OnPasswordChanging(string value);
-    partial void OnPasswordChanged();
+    partial void OnStatementChanging(string value);
+    partial void OnStatementChanged();
+    partial void OnUserIdChanging(int value);
+    partial void OnUserIdChanged();
     partial void OnAddedDateChanging(System.DateTime value);
     partial void OnAddedDateChanged();
-    partial void OnActivatedDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnActivatedDateChanged();
-    partial void OnActivatedLinkChanging(string value);
-    partial void OnActivatedLinkChanged();
-    partial void OnLastVisitDateChanging(string value);
-    partial void OnLastVisitDateChanged();
-    partial void OnAvatarPathChanging(string value);
-    partial void OnAvatarPathChanged();
-    partial void OnBirthdateChanging(System.DateTime value);
-    partial void OnBirthdateChanged();
+    partial void OnTopicIdChanging(int value);
+    partial void OnTopicIdChanged();
     #endregion
 		
-		public User()
+		public Message()
 		{
-			this._Topics = new EntitySet<Topic>(new Action<Topic>(this.attach_Topics), new Action<Topic>(this.detach_Topics));
-			this._Messages = new EntitySet<Message>(new Action<Message>(this.attach_Messages), new Action<Message>(this.detach_Messages));
-			this._UserRoles = new EntitySet<UserRole>(new Action<UserRole>(this.attach_UserRoles), new Action<UserRole>(this.detach_UserRoles));
+			this._Topic = default(EntityRef<Topic>);
+			this._User = default(EntityRef<User>);
 			OnCreated();
 		}
 		
@@ -200,42 +181,46 @@ namespace LessonProject.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Email
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Statement", DbType="NVarChar(500) NOT NULL", CanBeNull=false)]
+		public string Statement
 		{
 			get
 			{
-				return this._Email;
+				return this._Statement;
 			}
 			set
 			{
-				if ((this._Email != value))
+				if ((this._Statement != value))
 				{
-					this.OnEmailChanging(value);
+					this.OnStatementChanging(value);
 					this.SendPropertyChanging();
-					this._Email = value;
-					this.SendPropertyChanged("Email");
-					this.OnEmailChanged();
+					this._Statement = value;
+					this.SendPropertyChanged("Statement");
+					this.OnStatementChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Password
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="Int NOT NULL")]
+		public int UserId
 		{
 			get
 			{
-				return this._Password;
+				return this._UserId;
 			}
 			set
 			{
-				if ((this._Password != value))
+				if ((this._UserId != value))
 				{
-					this.OnPasswordChanging(value);
+					if (this._User.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnUserIdChanging(value);
 					this.SendPropertyChanging();
-					this._Password = value;
-					this.SendPropertyChanged("Password");
-					this.OnPasswordChanged();
+					this._UserId = value;
+					this.SendPropertyChanged("UserId");
+					this.OnUserIdChanged();
 				}
 			}
 		}
@@ -260,142 +245,95 @@ namespace LessonProject.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActivatedDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> ActivatedDate
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TopicId", DbType="Int NOT NULL")]
+		public int TopicId
 		{
 			get
 			{
-				return this._ActivatedDate;
+				return this._TopicId;
 			}
 			set
 			{
-				if ((this._ActivatedDate != value))
+				if ((this._TopicId != value))
 				{
-					this.OnActivatedDateChanging(value);
+					if (this._Topic.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnTopicIdChanging(value);
 					this.SendPropertyChanging();
-					this._ActivatedDate = value;
-					this.SendPropertyChanged("ActivatedDate");
-					this.OnActivatedDateChanged();
+					this._TopicId = value;
+					this.SendPropertyChanged("TopicId");
+					this.OnTopicIdChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActivatedLink", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string ActivatedLink
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Topic_Message", Storage="_Topic", ThisKey="TopicId", OtherKey="Id", IsForeignKey=true)]
+		public Topic Topic
 		{
 			get
 			{
-				return this._ActivatedLink;
+				return this._Topic.Entity;
 			}
 			set
 			{
-				if ((this._ActivatedLink != value))
+				Topic previousValue = this._Topic.Entity;
+				if (((previousValue != value) 
+							|| (this._Topic.HasLoadedOrAssignedValue == false)))
 				{
-					this.OnActivatedLinkChanging(value);
 					this.SendPropertyChanging();
-					this._ActivatedLink = value;
-					this.SendPropertyChanged("ActivatedLink");
-					this.OnActivatedLinkChanged();
+					if ((previousValue != null))
+					{
+						this._Topic.Entity = null;
+						previousValue.Messages.Remove(this);
+					}
+					this._Topic.Entity = value;
+					if ((value != null))
+					{
+						value.Messages.Add(this);
+						this._TopicId = value.Id;
+					}
+					else
+					{
+						this._TopicId = default(int);
+					}
+					this.SendPropertyChanged("Topic");
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastVisitDate", DbType="NVarChar(50)")]
-		public string LastVisitDate
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Message", Storage="_User", ThisKey="UserId", OtherKey="Id", IsForeignKey=true)]
+		public User User
 		{
 			get
 			{
-				return this._LastVisitDate;
+				return this._User.Entity;
 			}
 			set
 			{
-				if ((this._LastVisitDate != value))
+				User previousValue = this._User.Entity;
+				if (((previousValue != value) 
+							|| (this._User.HasLoadedOrAssignedValue == false)))
 				{
-					this.OnLastVisitDateChanging(value);
 					this.SendPropertyChanging();
-					this._LastVisitDate = value;
-					this.SendPropertyChanged("LastVisitDate");
-					this.OnLastVisitDateChanged();
+					if ((previousValue != null))
+					{
+						this._User.Entity = null;
+						previousValue.Messages.Remove(this);
+					}
+					this._User.Entity = value;
+					if ((value != null))
+					{
+						value.Messages.Add(this);
+						this._UserId = value.Id;
+					}
+					else
+					{
+						this._UserId = default(int);
+					}
+					this.SendPropertyChanged("User");
 				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AvatarPath", DbType="NVarChar(50)")]
-		public string AvatarPath
-		{
-			get
-			{
-				return this._AvatarPath;
-			}
-			set
-			{
-				if ((this._AvatarPath != value))
-				{
-					this.OnAvatarPathChanging(value);
-					this.SendPropertyChanging();
-					this._AvatarPath = value;
-					this.SendPropertyChanged("AvatarPath");
-					this.OnAvatarPathChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Birthdate", DbType="DateTime NOT NULL")]
-		public System.DateTime Birthdate
-		{
-			get
-			{
-				return this._Birthdate;
-			}
-			set
-			{
-				if ((this._Birthdate != value))
-				{
-					this.OnBirthdateChanging(value);
-					this.SendPropertyChanging();
-					this._Birthdate = value;
-					this.SendPropertyChanged("Birthdate");
-					this.OnBirthdateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Topic", Storage="_Topics", ThisKey="Id", OtherKey="UserId")]
-		public EntitySet<Topic> Topics
-		{
-			get
-			{
-				return this._Topics;
-			}
-			set
-			{
-				this._Topics.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Message", Storage="_Messages", ThisKey="Id", OtherKey="UserId")]
-		public EntitySet<Message> Messages
-		{
-			get
-			{
-				return this._Messages;
-			}
-			set
-			{
-				this._Messages.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_UserRole", Storage="_UserRoles", ThisKey="Id", OtherKey="UserId")]
-		public EntitySet<UserRole> UserRoles
-		{
-			get
-			{
-				return this._UserRoles;
-			}
-			set
-			{
-				this._UserRoles.Assign(value);
 			}
 		}
 		
@@ -418,42 +356,6 @@ namespace LessonProject.Model
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
-		
-		private void attach_Topics(Topic entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = this;
-		}
-		
-		private void detach_Topics(Topic entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = null;
-		}
-		
-		private void attach_Messages(Message entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = this;
-		}
-		
-		private void detach_Messages(Message entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = null;
-		}
-		
-		private void attach_UserRoles(UserRole entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = this;
-		}
-		
-		private void detach_UserRoles(UserRole entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = null;
-		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Role")]
@@ -464,7 +366,7 @@ namespace LessonProject.Model
 		
 		private int _Id;
 		
-		private string _Code;
+		private int _Code;
 		
 		private string _Name;
 		
@@ -476,7 +378,7 @@ namespace LessonProject.Model
     partial void OnCreated();
     partial void OnIdChanging(int value);
     partial void OnIdChanged();
-    partial void OnCodeChanging(string value);
+    partial void OnCodeChanging(int value);
     partial void OnCodeChanged();
     partial void OnNameChanging(string value);
     partial void OnNameChanged();
@@ -508,8 +410,8 @@ namespace LessonProject.Model
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Code", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Code
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Code", DbType="Int NOT NULL")]
+		public int Code
 		{
 			get
 			{
@@ -797,246 +699,6 @@ namespace LessonProject.Model
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Message")]
-	public partial class Message : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private string _Statement;
-		
-		private int _UserId;
-		
-		private System.DateTime _AddedDate;
-		
-		private int _TopicId;
-		
-		private EntityRef<Topic> _Topic;
-		
-		private EntityRef<User> _User;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnStatementChanging(string value);
-    partial void OnStatementChanged();
-    partial void OnUserIdChanging(int value);
-    partial void OnUserIdChanged();
-    partial void OnAddedDateChanging(System.DateTime value);
-    partial void OnAddedDateChanged();
-    partial void OnTopicIdChanging(int value);
-    partial void OnTopicIdChanged();
-    #endregion
-		
-		public Message()
-		{
-			this._Topic = default(EntityRef<Topic>);
-			this._User = default(EntityRef<User>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Statement", DbType="NVarChar(500) NOT NULL", CanBeNull=false)]
-		public string Statement
-		{
-			get
-			{
-				return this._Statement;
-			}
-			set
-			{
-				if ((this._Statement != value))
-				{
-					this.OnStatementChanging(value);
-					this.SendPropertyChanging();
-					this._Statement = value;
-					this.SendPropertyChanged("Statement");
-					this.OnStatementChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="Int NOT NULL")]
-		public int UserId
-		{
-			get
-			{
-				return this._UserId;
-			}
-			set
-			{
-				if ((this._UserId != value))
-				{
-					if (this._User.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnUserIdChanging(value);
-					this.SendPropertyChanging();
-					this._UserId = value;
-					this.SendPropertyChanged("UserId");
-					this.OnUserIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddedDate", DbType="DateTime NOT NULL")]
-		public System.DateTime AddedDate
-		{
-			get
-			{
-				return this._AddedDate;
-			}
-			set
-			{
-				if ((this._AddedDate != value))
-				{
-					this.OnAddedDateChanging(value);
-					this.SendPropertyChanging();
-					this._AddedDate = value;
-					this.SendPropertyChanged("AddedDate");
-					this.OnAddedDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TopicId", DbType="Int NOT NULL")]
-		public int TopicId
-		{
-			get
-			{
-				return this._TopicId;
-			}
-			set
-			{
-				if ((this._TopicId != value))
-				{
-					if (this._Topic.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnTopicIdChanging(value);
-					this.SendPropertyChanging();
-					this._TopicId = value;
-					this.SendPropertyChanged("TopicId");
-					this.OnTopicIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Topic_Message", Storage="_Topic", ThisKey="TopicId", OtherKey="Id", IsForeignKey=true)]
-		public Topic Topic
-		{
-			get
-			{
-				return this._Topic.Entity;
-			}
-			set
-			{
-				Topic previousValue = this._Topic.Entity;
-				if (((previousValue != value) 
-							|| (this._Topic.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Topic.Entity = null;
-						previousValue.Messages.Remove(this);
-					}
-					this._Topic.Entity = value;
-					if ((value != null))
-					{
-						value.Messages.Add(this);
-						this._TopicId = value.Id;
-					}
-					else
-					{
-						this._TopicId = default(int);
-					}
-					this.SendPropertyChanged("Topic");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Message", Storage="_User", ThisKey="UserId", OtherKey="Id", IsForeignKey=true)]
-		public User User
-		{
-			get
-			{
-				return this._User.Entity;
-			}
-			set
-			{
-				User previousValue = this._User.Entity;
-				if (((previousValue != value) 
-							|| (this._User.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._User.Entity = null;
-						previousValue.Messages.Remove(this);
-					}
-					this._User.Entity = value;
-					if ((value != null))
-					{
-						value.Messages.Add(this);
-						this._UserId = value.Id;
-					}
-					else
-					{
-						this._UserId = default(int);
-					}
-					this.SendPropertyChanged("User");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.UserRole")]
 	public partial class UserRole : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1226,6 +888,344 @@ namespace LessonProject.Model
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[User]")]
+	public partial class User : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _Email;
+		
+		private string _Password;
+		
+		private System.DateTime _AddedDate;
+		
+		private System.Nullable<System.DateTime> _ActivatedDate;
+		
+		private string _ActivatedLink;
+		
+		private string _LastVisitDate;
+		
+		private string _AvatarPath;
+		
+		private System.DateTime _Birthdate;
+		
+		private EntitySet<Message> _Messages;
+		
+		private EntitySet<Topic> _Topics;
+		
+		private EntitySet<UserRole> _UserRoles;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnEmailChanging(string value);
+    partial void OnEmailChanged();
+    partial void OnPasswordChanging(string value);
+    partial void OnPasswordChanged();
+    partial void OnAddedDateChanging(System.DateTime value);
+    partial void OnAddedDateChanged();
+    partial void OnActivatedDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnActivatedDateChanged();
+    partial void OnActivatedLinkChanging(string value);
+    partial void OnActivatedLinkChanged();
+    partial void OnLastVisitDateChanging(string value);
+    partial void OnLastVisitDateChanged();
+    partial void OnAvatarPathChanging(string value);
+    partial void OnAvatarPathChanged();
+    partial void OnBirthdateChanging(System.DateTime value);
+    partial void OnBirthdateChanged();
+    #endregion
+		
+		public User()
+		{
+			this._Messages = new EntitySet<Message>(new Action<Message>(this.attach_Messages), new Action<Message>(this.detach_Messages));
+			this._Topics = new EntitySet<Topic>(new Action<Topic>(this.attach_Topics), new Action<Topic>(this.detach_Topics));
+			this._UserRoles = new EntitySet<UserRole>(new Action<UserRole>(this.attach_UserRoles), new Action<UserRole>(this.detach_UserRoles));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this.OnEmailChanging(value);
+					this.SendPropertyChanging();
+					this._Email = value;
+					this.SendPropertyChanged("Email");
+					this.OnEmailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Password
+		{
+			get
+			{
+				return this._Password;
+			}
+			set
+			{
+				if ((this._Password != value))
+				{
+					this.OnPasswordChanging(value);
+					this.SendPropertyChanging();
+					this._Password = value;
+					this.SendPropertyChanged("Password");
+					this.OnPasswordChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AddedDate", DbType="DateTime NOT NULL")]
+		public System.DateTime AddedDate
+		{
+			get
+			{
+				return this._AddedDate;
+			}
+			set
+			{
+				if ((this._AddedDate != value))
+				{
+					this.OnAddedDateChanging(value);
+					this.SendPropertyChanging();
+					this._AddedDate = value;
+					this.SendPropertyChanged("AddedDate");
+					this.OnAddedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActivatedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ActivatedDate
+		{
+			get
+			{
+				return this._ActivatedDate;
+			}
+			set
+			{
+				if ((this._ActivatedDate != value))
+				{
+					this.OnActivatedDateChanging(value);
+					this.SendPropertyChanging();
+					this._ActivatedDate = value;
+					this.SendPropertyChanged("ActivatedDate");
+					this.OnActivatedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActivatedLink", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string ActivatedLink
+		{
+			get
+			{
+				return this._ActivatedLink;
+			}
+			set
+			{
+				if ((this._ActivatedLink != value))
+				{
+					this.OnActivatedLinkChanging(value);
+					this.SendPropertyChanging();
+					this._ActivatedLink = value;
+					this.SendPropertyChanged("ActivatedLink");
+					this.OnActivatedLinkChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastVisitDate", DbType="NVarChar(50)")]
+		public string LastVisitDate
+		{
+			get
+			{
+				return this._LastVisitDate;
+			}
+			set
+			{
+				if ((this._LastVisitDate != value))
+				{
+					this.OnLastVisitDateChanging(value);
+					this.SendPropertyChanging();
+					this._LastVisitDate = value;
+					this.SendPropertyChanged("LastVisitDate");
+					this.OnLastVisitDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AvatarPath", DbType="NVarChar(50)")]
+		public string AvatarPath
+		{
+			get
+			{
+				return this._AvatarPath;
+			}
+			set
+			{
+				if ((this._AvatarPath != value))
+				{
+					this.OnAvatarPathChanging(value);
+					this.SendPropertyChanging();
+					this._AvatarPath = value;
+					this.SendPropertyChanged("AvatarPath");
+					this.OnAvatarPathChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Birthdate", DbType="DateTime NOT NULL")]
+		public System.DateTime Birthdate
+		{
+			get
+			{
+				return this._Birthdate;
+			}
+			set
+			{
+				if ((this._Birthdate != value))
+				{
+					this.OnBirthdateChanging(value);
+					this.SendPropertyChanging();
+					this._Birthdate = value;
+					this.SendPropertyChanged("Birthdate");
+					this.OnBirthdateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Message", Storage="_Messages", ThisKey="Id", OtherKey="UserId")]
+		public EntitySet<Message> Messages
+		{
+			get
+			{
+				return this._Messages;
+			}
+			set
+			{
+				this._Messages.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Topic", Storage="_Topics", ThisKey="Id", OtherKey="UserId")]
+		public EntitySet<Topic> Topics
+		{
+			get
+			{
+				return this._Topics;
+			}
+			set
+			{
+				this._Topics.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_UserRole", Storage="_UserRoles", ThisKey="Id", OtherKey="UserId")]
+		public EntitySet<UserRole> UserRoles
+		{
+			get
+			{
+				return this._UserRoles;
+			}
+			set
+			{
+				this._UserRoles.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Messages(Message entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_Messages(Message entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+		
+		private void attach_Topics(Topic entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_Topics(Topic entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+		
+		private void attach_UserRoles(UserRole entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_UserRoles(UserRole entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
 		}
 	}
 }

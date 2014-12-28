@@ -12,7 +12,7 @@ namespace LessonProject.Model
         {
             get
             {
-                return Db.UserRole;
+                return Db.UserRoles;
             }
         }
 
@@ -20,8 +20,8 @@ namespace LessonProject.Model
         {
             if (instance.Id == 0)
             {
-                Db.UserRole.InsertOnSubmit(instance);
-                Db.UserRole.Context.SubmitChanges();
+                Db.UserRoles.InsertOnSubmit(instance);
+                Db.UserRoles.Context.SubmitChanges();
                 return true;
             }
 
@@ -30,11 +30,11 @@ namespace LessonProject.Model
 
         public bool UpdateUserRole(UserRole instance)
         {
-            UserRole cache = Db.UserRole.Where(p => p.Id == instance.Id).FirstOrDefault();
+            UserRole cache = Db.UserRoles.Where(p => p.Id == instance.Id).FirstOrDefault();
             if (cache != null)
             {
                 //TODO : Update fields for UserRole
-                Db.UserRole.Context.SubmitChanges();
+                Db.UserRoles.Context.SubmitChanges();
                 return true;
             }
 
@@ -43,11 +43,11 @@ namespace LessonProject.Model
 
         public bool RemoveUserRole(int idUserRole)
         {
-            UserRole instance = Db.UserRole.Where(p => p.Id == idUserRole).FirstOrDefault();
+            UserRole instance = Db.UserRoles.Where(p => p.Id == idUserRole).FirstOrDefault();
             if (instance != null)
             {
-                Db.UserRole.DeleteOnSubmit(instance);
-                Db.UserRole.Context.SubmitChanges();
+                Db.UserRoles.DeleteOnSubmit(instance);
+                Db.UserRoles.Context.SubmitChanges();
                 return true;
             }
 

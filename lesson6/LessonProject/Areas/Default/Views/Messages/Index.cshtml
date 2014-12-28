@@ -1,17 +1,21 @@
-﻿@model IList<LessonProject.Model.Message>
+﻿@model LessonProject.Model.PageConfiguration.MessagesPageConfig
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
 }
 
-@for (int i = 0; i < Model.Count; i++)
+@foreach(var message in Model.Messages)
 {
-    <li>@Model[i].Statement     @Model[i].User.Email     @Model[i].AddedDate</li>
+    <li>@message.Statement     @message.User.Email     @message.AddedDate</li>
 }
 
-@using(Html.BeginForm("Index", "Messages"))
+@if(Model.RightToAccess >= 1)
 {
-	@Html.TextBox("statement", string.Empty)
-	<input type="submit" />
+    using (Html.BeginForm("Index", "Messages"))
+    {
+        @Html.TextBox("statement", string.Empty)
+        <input type="submit" />
+    }
+
 }

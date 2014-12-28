@@ -4,10 +4,10 @@
 {
     <li>@Model.Email</li>
     <li>@Html.ActionLink("Выход", "Logout", "Login")</li>
-    <li>@Html.ActionLink("Topics", "Index", "Topics")</li>
 }
 else
 {
     <li>@Html.ActionLink("Вход", "Index", "Login")</li>
     <li>@Html.ActionLink("Регистрация", "Register", "User")</li>
 }
+<li>@Html.ActionLink("Topics", "Index", "Topics")</li>

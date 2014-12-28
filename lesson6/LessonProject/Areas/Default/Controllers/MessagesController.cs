@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
 using LessonProject.Model;
+using LessonProject.Model.PageConfiguration;
 
 namespace LessonProject.Areas.Default.Controllers
 {
@@ -12,7 +13,8 @@ namespace LessonProject.Areas.Default.Controllers
 		public ActionResult Index(int topicId)
 		{
 			UserContext.CurrentTopic = topicId;
-			return View(Repository.Messages.Where(m => m.TopicId == UserContext.CurrentTopic).ToList());
+			
+			return View(CreatePageConfig());
 		}
 
 		[HttpPost]
@@ -20,7 +22,20 @@ namespace LessonProject.Areas.Default.Controllers
 		{
 			var message = new Message { Statement = statement, User = CurrentUser, TopicId = UserContext.CurrentTopic };
 			Repository.CreateMessage(message);
-			return View(Repository.Messages.Where(m => m.TopicId == UserContext.CurrentTopic).ToList());
+			
+			return View(CreatePageConfig());
+		}
+
+		private MessagesPageConfig CreatePageConfig()
+		{
+			var messages = Repository.Messages.Where(m => m.TopicId == UserContext.CurrentTopic).ToList();
+			var pageConf = new MessagesPageConfig
+			{
+				Topic = messages.First().Topic.Name,
+				Messages = messages,
+				RightToAccess = UserRights
+			};
+			return pageConf;
 		}
 	}
 }

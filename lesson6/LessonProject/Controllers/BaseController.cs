@@ -25,7 +25,19 @@ namespace LessonProject.Controllers
 		[Inject]
 		public IUserContext UserContext { get; set; }
 
-        public User CurrentUser
+	    public int UserRights
+	    {
+		    get
+		    {
+			    if(CurrentUser == null)
+			    {
+				    return 0;
+			    }
+			    return CurrentUser.UserRoles.Max(role => role.Role.Code);
+		    }
+	    }
+
+	    public User CurrentUser
         {
             get
             {
