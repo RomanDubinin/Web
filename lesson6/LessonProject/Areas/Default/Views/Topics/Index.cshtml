@@ -1,4 +1,4 @@
-﻿@model IList<LessonProject.Model.Topic>
+﻿@model LessonProject.Model.PageConfiguration.TopicsPageConfig
 
 @{
     ViewBag.Title = "Index";
@@ -7,8 +7,17 @@
 
 <h2>there are will be topics</h2>
 
-@for(int i = 0; i < Model.Count; i++)
+@foreach(var topic in @Model.Topics)
 {
-    @Html.ActionLink(@Model[i].Name, "Index", "Messages", new { topicId = @Model[i].Id }, null)
+    @Html.ActionLink(@topic.Name, "Index", "Messages", new { topicId = topic.Id }, null)
+}
+
+@if (@Model.RightToAccess >= 1)
+{
+    using (Html.BeginForm("Index", "Topics"))
+    {
+        <input type="text" name="topicName" value="">
+        <input type="submit" />
+    }
 
 }

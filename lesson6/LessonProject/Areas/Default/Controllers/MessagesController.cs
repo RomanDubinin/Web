@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
+using System.Web.WebPages;
 using LessonProject.Model;
 using LessonProject.Model.PageConfiguration;
 
@@ -20,9 +21,12 @@ namespace LessonProject.Areas.Default.Controllers
 		[HttpPost]
 		public ActionResult Index(string statement)
 		{
-			var message = new Message { Statement = statement, User = CurrentUser, TopicId = UserContext.CurrentTopic };
-			Repository.CreateMessage(message);
-			
+			if(!statement.IsEmpty())
+			{
+				var message = new Message { Statement = statement, User = CurrentUser, TopicId = UserContext.CurrentTopic };
+				Repository.CreateMessage(message);
+			}
+
 			return View(CreatePageConfig());
 		}
 

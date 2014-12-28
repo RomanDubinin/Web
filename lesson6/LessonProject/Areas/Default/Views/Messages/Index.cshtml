@@ -16,7 +16,8 @@
 {
     using (Html.BeginForm("Index", "Messages"))
     {
-        @Html.TextBox("statement", string.Empty)
+        //@Html.TextBox("statement", string.Empty) непонятные эффэкты
+        <input type="text" name="statement" value="">
         <input type="submit" />
     }
 
