@@ -1,4 +1,5 @@
-﻿@model LessonProject.Model.PageConfiguration.TopicsPageConfig
+﻿@using Microsoft.Ajax.Utilities
+@model LessonProject.Model.PageConfiguration.TopicsPageConfig
 
 @{
     ViewBag.Title = "Index";
@@ -10,11 +11,19 @@
 @foreach(var topic in @Model.Topics)
 {
     @Html.ActionLink(@topic.Name, "Index", "Messages", new { topicId = topic.Id }, null)
+    //@Html.ActionLink("delete", "Index", "Topics", new {topicId = 0}, null)
+    if (Model.RightToAccess >= 2)
+    {
+        using (Html.BeginForm("Index", "Topics", new { topicId = topic.Id }))
+        {
+            <input type="submit" value="delete" name="n" />
+        }
+    }
 }
 
 @if (@Model.RightToAccess >= 1)
 {
-    using (Html.BeginForm("Index", "Topics"))
+    using (Html.BeginForm("Index", "Topics", new { topicId = 0 }))
     {
         <input type="text" name="topicName" value="">
         <input type="submit" />
