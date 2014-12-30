@@ -6,6 +6,7 @@ using LessonProject.Global.Auth;
 using LessonProject.Global.UserContext;
 using LessonProject.Mappers;
 using LessonProject.Model;
+using LessonProject.Model.SqlRepository;
 using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 using Ninject;
 using Ninject.Web.Common;

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace LessonProject.Model
+namespace LessonProject.Model.SqlRepository
 {
 	public partial class SqlRepository
 	{

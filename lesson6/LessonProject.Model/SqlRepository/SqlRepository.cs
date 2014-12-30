@@ -1,6 +1,6 @@
 ﻿using Ninject;
 
-namespace LessonProject.Model
+namespace LessonProject.Model.SqlRepository
 {
 	public partial class SqlRepository : IRepository
 	{
