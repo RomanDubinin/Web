@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace LessonProject.Models.ViewModels
@@ -10,7 +8,7 @@ namespace LessonProject.Models.ViewModels
 
     public class UserView
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         [Required(ErrorMessage="Введите email")]
         public string Email { get; set; }

@@ -49,7 +49,7 @@ namespace LessonProject.Areas.Default.Controllers
 			return View(userView);
 		}
 
-		public ActionResult Captcha()
+		public void Captcha()
 		{
 			Session[CaptchaImage.CaptchaValueKey] = new Random(DateTime.Now.Millisecond).Next(1111, 9999).ToString();
 			var ci = new CaptchaImage(Session[CaptchaImage.CaptchaValueKey].ToString(), 211, 50, "Arial");
@@ -63,7 +63,7 @@ namespace LessonProject.Areas.Default.Controllers
 
 			// Dispose of the CAPTCHA image object.
 			ci.Dispose();
-			return null;
+			
 		}
 	}
 }

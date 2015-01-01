@@ -14,7 +14,7 @@
     //@Html.ActionLink("delete", "Index", "Topics", new {topicId = 0}, null)
     if (Model.RightToAccess >= 2)
     {
-        using (Html.BeginForm("Index", "Topics", new { topicId = topic.Id }))
+        using (Html.BeginForm("DeleteTopic", "Topics", new { topicId = topic.Id }))
         {
             <input type="submit" value="delete" />
         }
@@ -23,7 +23,7 @@
 
 @if (@Model.RightToAccess >= 1)
 {
-    using (Html.BeginForm("Index", "Topics", new { topicId = 0 }))
+    using (Html.BeginForm("CreateTopic", "Topics"))
     {
         <input type="text" name="topicName" value="">
         <input type="submit" />

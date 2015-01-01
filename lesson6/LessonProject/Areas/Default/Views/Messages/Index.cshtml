@@ -12,7 +12,7 @@
     <li>@message.Statement     @message.User.Email     @message.AddedDate</li>
     if(Model.RightToAccess >=2)
     {
-        using(Html.BeginForm("Index", "Messages", new {messageId = message.Id}))
+        using (Html.BeginForm("DeleteMessage", "Messages", new { messageId = message.Id }))
         {
             <input type="submit" value="delete"/>
         }
@@ -21,7 +21,7 @@
 
 @if(Model.RightToAccess >= 1)
 {
-    using (Html.BeginForm("Index", "Messages", new {messageId = 0}))
+    using (Html.BeginForm("CreateMessage", "Messages"))
     {
         //@Html.TextBox("statement", string.Empty) непонятные эффэкты
         <input type="text" name="statement" value="">

@@ -1,6 +1,5 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
-using System.Web.WebPages;
 using LessonProject.Model;
 using LessonProject.Model.PageConfiguration;
 
@@ -15,25 +14,27 @@ namespace LessonProject.Areas.Default.Controllers
 		public ActionResult Index(int topicId)
 		{
 			UserContext.CurrentTopic = topicId;
-			
 			return View(CreatePageConfig());
 		}
 
 		//after adding or deleting message
 		[HttpPost]
-		public ActionResult Index(string statement, int messageId)
+		public ActionResult CreateMessage(string statement)
 		{
 			if(!string.IsNullOrEmpty(statement))
 			{
 				var message = new Message { Statement = statement, User = CurrentUser, TopicId = UserContext.CurrentTopic };
 				Repository.CreateMessage(message);
 			}
-			if(messageId != 0)
-			{
-				Repository.RemoveMessage(messageId);
-			}
 
-			return View(CreatePageConfig());
+			return RedirectToAction("Index", new {topicId = UserContext.CurrentTopic});
+		}
+
+		[HttpPost]
+		public ActionResult DeleteMessage(int messageId)
+		{
+			Repository.RemoveMessage(messageId);
+			return RedirectToAction("Index", new { topicId = UserContext.CurrentTopic });
 		}
 
 		private MessagesPageConfig CreatePageConfig()

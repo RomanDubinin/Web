@@ -1,31 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
 namespace LessonProject.Global.Auth
 {
-    public class AuthHttpModule : IHttpModule
-    {
-        public void Init(HttpApplication context)
-        {
-            context.AuthenticateRequest += new EventHandler(this.Authenticate);
-        }
+	public class AuthHttpModule : IHttpModule
+	{
+		public void Init(HttpApplication context)
+		{
+			context.AuthenticateRequest += Authenticate;
+		}
 
-        private void Authenticate(Object source, EventArgs e)
-        {
-            HttpApplication app = (HttpApplication)source;
-            HttpContext context = app.Context;
+		public void Dispose()
+		{
+		}
 
-            var auth = DependencyResolver.Current.GetService<IAuthentication>();
-            auth.HttpContext = context;
+		private void Authenticate(Object source, EventArgs e)
+		{
+			var app = (HttpApplication) source;
+			var context = app.Context;
 
-            context.User = auth.CurrentUser;
-        }
+			var auth = DependencyResolver.Current.GetService<IAuthentication>();
+			auth.HttpContext = context;
 
-        public void Dispose()
-        {
-        }
-    }
+			context.User = auth.CurrentUser;
+		}
+	}
 }

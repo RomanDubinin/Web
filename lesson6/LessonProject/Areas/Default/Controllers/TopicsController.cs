@@ -16,22 +16,25 @@ namespace LessonProject.Areas.Default.Controllers
 		}
 
 		[HttpPost]
-		public ActionResult Index(string topicName, int topicId)
+		public ActionResult CreateTopic(string topicName)
 		{
 			if(!string.IsNullOrEmpty(topicName))
 			{
 				var topic = new Topic {Name = topicName, UserId = CurrentUser.Id};
 				Repository.CreateTopic(topic);
 			}
-			if(topicId != 0)
+			return RedirectToAction("Index");
+		}
+
+		[HttpPost]
+		public ActionResult DeleteTopic(int topicId)
+		{
+			foreach(var message in Repository.Messages.Where(m => m.TopicId == topicId))
 			{
-				foreach(var message in Repository.Messages.Where(m => m.TopicId == topicId))
-				{
-					Repository.RemoveMessage(message.Id);
-				}
-				Repository.RemoveTopic(topicId);
+				Repository.RemoveMessage(message.Id);
 			}
-			return View(CreateConfig());
+			Repository.RemoveTopic(topicId);
+			return RedirectToAction("Index");
 		}
 
 		private TopicsPageConfig CreateConfig()
