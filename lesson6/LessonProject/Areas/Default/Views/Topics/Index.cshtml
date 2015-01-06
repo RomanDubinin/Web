@@ -10,7 +10,7 @@
 
 @foreach(var topic in @Model.Topics)
 {
-    @Html.ActionLink(@topic.Name, "Index", "Messages", new { topicId = topic.Id }, null)
+    <li>@Html.ActionLink(@topic.Name, "Index", "Messages", new { topicId = topic.Id }, null)</li>
     //@Html.ActionLink("delete", "Index", "Topics", new {topicId = 0}, null)
     if (Model.RightToAccess >= 2)
     {
