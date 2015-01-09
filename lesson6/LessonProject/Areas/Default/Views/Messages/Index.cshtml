@@ -1,31 +1,53 @@
 ﻿@model LessonProject.Model.PageConfiguration.MessagesPageConfig
 
 @{
-    ViewBag.Title = "придумай заголовки всем страницам";
+    ViewBag.Title = "Forum";
     Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@Model.Topic</h2>
+<h2 style="text-align: center; font-family: mriam; font-size: 50px; font-style: italic;"> @Model.Topic </h2>
 
 @foreach(var message in Model.Messages)
 {
-    <li>@message.Statement     @message.User.Email     @message.AddedDate</li>
-    if(Model.RightToAccess >=2)
-    {
-        using (Html.BeginForm("DeleteMessage", "Messages", new { messageId = message.Id }))
-        {
-            <input type="submit" value="delete"/>
-        }
-    }
-}
 
-@if(Model.RightToAccess >= 1)
+<center>
+    <table border="1" width="80%" height="25%" >
+        <tr width="700px" >
+            <th >
+                @message.Statement
+
+            </th>
+            <td width="90px" align="center" >
+                @message.User.Email
+            </td>
+            <td width="110px" align="center">
+                @message.AddedDate
+            </td>
+        </tr>
+    </table>
+</center>
+
+        if(Model.RightToAccess >=2)
+        {
+
+        using (Html.BeginForm("DeleteMessage", "Messages", new { messageId = message.Id }))
+
+        {<center>
+            <input type="submit" value="Удалить" />
+        </center>
+        }
+        }
+   
+}
+    
+            @if(Model.RightToAccess >= 1)
 {
     using (Html.BeginForm("CreateMessage", "Messages"))
     {
-        //@Html.TextBox("statement", string.Empty) непонятные эффэкты
+        <center>
         <input type="text" name="statement" value="">
-        <input type="submit" />
+        <input type="submit"/>
+            </center>
     }
 
 }

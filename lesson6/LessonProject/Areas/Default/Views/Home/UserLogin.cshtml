@@ -5,21 +5,21 @@
     <center>
         <table border="1" width="40%" height="25%">
             <tr>
-                <th>@Model.Email</th>
-                <th>@Html.ActionLink("Выход", "Logout", "Login") </th>
+                <th style="font-size: 20px;">@Model.Email</th>
+                <th style="font-size: 20px;">@Html.ActionLink("Выход", "Logout", "Login") </th>
 
             </tr>
         </table>
     </center>
 
-    
+
 }
 else
 {
     <center>
         <table border="1" width="40%" height="25%">
             <tr>
-                <th>@Html.ActionLink("Вход", "Index", "Login")</th>
+                <th style="font-size: 20px;">@Html.ActionLink("Вход", "Index", "Login")</th>
 
             </tr>
         </table>
@@ -27,7 +27,7 @@ else
     <center>
         <table border="1" width="40%" height="25%">
             <tr>
-    <th>@Html.ActionLink("Регистрация", "Register", "User")</th>
+                <th style="font-size: 20px;" >@Html.ActionLink("Регистрация", "Register", "User")</th>
 
             </tr>
         </table>
@@ -37,7 +37,7 @@ else
 <center>
     <table border="1" width="40%" height="25%">
         <tr>
-            <th>@Html.ActionLink("Topics", "Index", "Topics")</th>
+            <th style="font-size: 20px;">@Html.ActionLink("Темы", "Index", "Topics")</th>
 
         </tr>
     </table>
