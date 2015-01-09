@@ -1,18 +1,18 @@
 ﻿@model LessonProject.Models.ViewModels.UserView
 @{
-    ViewBag.Title = "Register";
+    ViewBag.Title = "Forum";
     Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Register</h2>
+<h2 style="text-align: center; font-family: mriam; font-size: 40px; font-style: italic;"> Регистрация </h2>
 @using (Html.BeginForm("Register", "User", FormMethod.Post, new { @class = "form-horizontal" }))
 {
     @Html.ValidationSummary()
 
-    <fieldset>
+    <fieldset style="text-align: center; font-family: mriam; font-size: 15px; font-style: italic;">
         <div class="control-group">
             <label class="control-label" for="Email">
-                Email
+                E-mail:
             </label>
             <div class="controls">
                 @Html.ValidationMessage("Email")
@@ -21,7 +21,7 @@
         </div>
         <div class="control-group">
             <label class="control-label" for="FirstName">
-                Password
+                Пароль:
             </label>
             <div class="controls">
                 @Html.ValidationMessage("Password")
@@ -30,7 +30,7 @@
         </div>
         <div class="control-group">
             <label class="control-label" for="FirstName">
-                Confirm Password
+                Повторите пароль:
             </label>
             <div class="controls">
                 @Html.ValidationMessage("ConfirmPassword")
@@ -39,7 +39,7 @@
         </div>
         <div class="control-group">
             <label class="control-label" for="FirstName">
-                Birth date
+                Введите дату рождения:
             </label>
             <div class="controls">
                 @Html.DropDownList("BirthdateDay", Model.BirthdateDaySelectList)
@@ -49,7 +49,7 @@
         </div>
         <div class="control-group">
             <label class="control-label" for="FirstName">
-                Captcha
+                Введите код:
             </label>
         </div>
         <div class="control-group">
@@ -63,9 +63,9 @@
         </div>
         <div class="form-actions">
             <button type="submit" class="btn btn-primary">
-                Register
+                Регистрация
             </button>
-            @Html.ActionLink("Cancel", "Index", null, null, new { @class = "btn" })
+            @Html.ActionLink("Отмена", "Index", null, null, new { @class = "btn" })
         </div>
     </fieldset>
 }

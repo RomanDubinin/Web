@@ -2,12 +2,43 @@
 
 @if (Model != null)
 {
-    <li>@Model.Email</li>
-    <li>@Html.ActionLink("Выход", "Logout", "Login")</li>
+    <center>
+        <table border="1" width="40%" height="25%">
+            <tr>
+                <th>@Model.Email</th>
+                <th>@Html.ActionLink("Выход", "Logout", "Login") </th>
+
+            </tr>
+        </table>
+    </center>
+
+    
 }
 else
 {
-    <li>@Html.ActionLink("Вход", "Index", "Login")</li>
-    <li>@Html.ActionLink("Регистрация", "Register", "User")</li>
+    <center>
+        <table border="1" width="40%" height="25%">
+            <tr>
+                <th>@Html.ActionLink("Вход", "Index", "Login")</th>
+
+            </tr>
+        </table>
+    </center>
+    <center>
+        <table border="1" width="40%" height="25%">
+            <tr>
+    <th>@Html.ActionLink("Регистрация", "Register", "User")</th>
+
+            </tr>
+        </table>
+    </center>
+
 }
-<li>@Html.ActionLink("Topics", "Index", "Topics")</li>
+<center>
+    <table border="1" width="40%" height="25%">
+        <tr>
+            <th>@Html.ActionLink("Topics", "Index", "Topics")</th>
+
+        </tr>
+    </table>
+</center>
