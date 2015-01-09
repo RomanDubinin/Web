@@ -2,21 +2,30 @@
 @model LessonProject.Model.PageConfiguration.TopicsPageConfig
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Forum";
     Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
 }
 
-<h2>there are will be topics</h2>
+<h2 style="text-align: center; font-family: mriam; font-size: 50px; font-style: italic;">Темы форума:</h2>
 
-@foreach(var topic in @Model.Topics)
+@foreach (var topic in @Model.Topics)
 {
-    @Html.ActionLink(@topic.Name, "Index", "Messages", new { topicId = topic.Id }, null)
-    //@Html.ActionLink("delete", "Index", "Topics", new {topicId = 0}, null)
+    <center>
+        <table border="1" width="80%" >
+            <th style="text-align: left; font-size: 20px; ">
+                @Html.ActionLink(@topic.Name, "Index", "Messages", new { topicId = topic.Id }, null)
+            </th>
+        </table>
+
+    </center>
+
     if (Model.RightToAccess >= 2)
     {
         using (Html.BeginForm("DeleteTopic", "Topics", new { topicId = topic.Id }))
         {
-            <input type="submit" value="delete" />
+            <center>
+                <input type="submit" value="Удалить" />
+            </center>
         }
     }
 }
@@ -25,8 +34,10 @@
 {
     using (Html.BeginForm("CreateTopic", "Topics"))
     {
-        <input type="text" name="topicName" value="">
-        <input type="submit" />
+        <center>
+            <input type="text" name="topicName" value="">
+            <input type="submit" />
+        </center>
     }
 
 }

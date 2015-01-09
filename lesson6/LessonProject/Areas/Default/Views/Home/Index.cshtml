@@ -1,14 +1,25 @@
 ﻿@{
-    ViewBag.Title = "LessonProject";
+    ViewBag.Title = "Forum";
     Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
 }
 
-<h2>LessonProject</h2>
+<center>
+            <table border="1" width="40%" height="25%">
+                <tr>
+                    <th style="font-size: 20px;">@Html.ActionLink("Роли", "Index", "Role")</th>
 
-<p>
-    <div class="menu">
-    <a href="@Url.Action("Index", "Role")">Роли</a>
-    @Html.ActionLink("Пользователи",  "Index", "User")
-    </div>
-    
-</p>
+                </tr>
+            </table>
+        </center>
+        <center>
+            <table border="1" width="40%" height="25%">
+                <tr>
+                    <th style="font-size: 20px;">@Html.ActionLink("Пользователи", "Index", "User")</th>
+
+                </tr>
+            </table>
+        </center>
+
+<h1 style="text-align: center; font-family: mriam; font-size: 90px; font-style: italic;"> Добро Пожаловать!</h1>
+<h1 style="text-align: center; font-family: mriam; font-size: 70px; font-style: italic;">Мы рады видеть Вас на нашем форуме!</h1>
+<h3 style="text-align: center; font-family: mriam; font-size: 30px; font-style: italic;">Сейчас @DateTime.Now </h3>
