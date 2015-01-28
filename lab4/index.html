@@ -7,9 +7,8 @@
 </head>
 <body>
 
-Id: <input type="text" id="id"><br>
+Room: <input type="text" id="room"><br>
 Info: <span id="info"></span><br>
-Room: <span id="room"></span><br>
 <button type="button" onclick="get_info()">Info</button>
 
 <script type="text/javascript">
@@ -17,7 +16,7 @@ function get_info() {
 	$.ajax({
 		type: 'POST',
 		url: 'server.php',
-		data: 'id='+$("#id").val(),
+		data: 'room='+$("#room").val(),
 		success: function(data) {
 			if (data[0]) {
 				$("#info").text(data[1]);
