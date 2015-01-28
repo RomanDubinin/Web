@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>HostelDataBase</title>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+
+Id: <input type="text" id="id"><br>
+Info: <span id="info"></span><br>
+Room: <span id="room"></span><br>
+<button type="button" onclick="get_info()">Info</button>
+
+<script type="text/javascript">
+function get_info() {
+	$.ajax({
+		type: 'POST',
+		url: 'server.php',
+		data: 'id='+$("#id").val(),
+		success: function(data) {
+			if (data[0]) {
+				$("#info").text(data[1]);
+			} else {
+				$("#info").text("no data");
+			}
+		},
+		dataType: 'json'
+	});
+}
+</script>
+
+</body>
+</html>
