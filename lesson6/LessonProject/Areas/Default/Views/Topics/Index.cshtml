@@ -11,25 +11,30 @@
 @foreach (var topic in @Model.Topics)
 {
     <center>
-        <table border="1" width="80%" >
-            <th style="text-align: left; font-size: 20px; ">
-                @Html.ActionLink(@topic.Name, "Index", "Messages", new { topicId = topic.Id }, null)
+        <table border-style="hidden" width="80%">
+
+            <th width ="15px"> * </th>
+            <th style="text-align: left; font-size: 20px;">
+                @Html.ActionLink(@topic.Name, "Index", "Messages", new {topicId = topic.Id}, null)
             </th>
+
+            <td width="50px">
+                @if (Model.RightToAccess >= 2)
+                {
+                    using (Html.BeginForm("DeleteTopic", "Topics", new { topicId = topic.Id }))
+                    {
+
+                        <input type="submit" value="Удалить" />
+
+                    }
+                }
+            </td>
         </table>
 
     </center>
-
-    if (Model.RightToAccess >= 2)
-    {
-        using (Html.BeginForm("DeleteTopic", "Topics", new { topicId = topic.Id }))
-        {
-            <center>
-                <input type="submit" value="Удалить" />
-            </center>
-        }
-    }
 }
 
+<br></br>
 @if (@Model.RightToAccess >= 1)
 {
     using (Html.BeginForm("CreateTopic", "Topics"))

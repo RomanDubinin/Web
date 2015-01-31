@@ -2,43 +2,32 @@
 
 @if (Model != null)
 {
-    <center>
-        <table border="1" width="40%" height="25%">
-            <tr>
-                <th style="font-size: 20px;">@Model.Email</th>
-                <th style="font-size: 20px;">@Html.ActionLink("Выход", "Logout", "Login") </th>
 
-            </tr>
-        </table>
-    </center>
+    <table border-style ="hidden" width="15%"  align="right">
+        <tr>
+            <th>@Html.ActionLink("Темы", "Index", "Topics")</th>
+            <th >@Model.Email</th>
+            <th>@Html.ActionLink("Выход", "Logout", "Login") </th>
+
+
+        </tr>
+    </table>
+
 
 
 }
 else
 {
-    <center>
-        <table border="1" width="40%" height="25%">
-            <tr>
-                <th style="font-size: 20px;">@Html.ActionLink("Вход", "Index", "Login")</th>
 
-            </tr>
-        </table>
-    </center>
-    <center>
-        <table border="1" width="40%" height="25%">
-            <tr>
-                <th style="font-size: 20px;" >@Html.ActionLink("Регистрация", "Register", "User")</th>
-
-            </tr>
-        </table>
-    </center>
-
-}
-<center>
-    <table border="1" width="40%" height="25%">
+    <table border-style="hidden" width="15%" align="right" >
         <tr>
-            <th style="font-size: 20px;">@Html.ActionLink("Темы", "Index", "Topics")</th>
+            <th> @Html.ActionLink("Темы", "Index", "Topics")</th>
+            <th>@Html.ActionLink("Вход", "Index", "Login")</th>
+            <th>@Html.ActionLink("Регистрация", "Register", "User")</th>
+
 
         </tr>
     </table>
-</center>
+
+
+}
