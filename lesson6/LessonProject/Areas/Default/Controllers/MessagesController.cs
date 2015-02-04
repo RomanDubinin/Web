@@ -5,6 +5,7 @@ using LessonProject.Model.PageConfiguration;
 
 namespace LessonProject.Areas.Default.Controllers
 {
+	[ValidateInput(false)] 
 	public class MessagesController : DefaultController
 	{
 		//
