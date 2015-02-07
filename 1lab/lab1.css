@@ -1,0 +1,317 @@
+html {
+    background: #fff;
+    color: #000;
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+.Main.OnlineMagazine{
+    -ms-border-radius: 7px;
+    border-radius: 7px;
+    border: 10px solid #ededed;
+    overflow: hidden;
+}
+
+.Main {
+    padding: 0 0 0px 0;
+    margin: auto;
+    max-width: 1064px;
+	min-width: 1000px;
+}
+
+.Main .Header {
+    position: relative;
+    height: 100px;
+}
+
+.Main .Header .logo {
+    background: url("img/logo.png") no-repeat;
+    width: 300px;
+    height: 55px;
+    display: block;
+    position: absolute;
+}
+
+.Main .Header .topPhone {
+    background: url("img/phoneIcon.png") no-repeat 0 1px;
+    padding: 0px 0px 0px 30px;
+    font: 20px/22px 'FontMedium';
+    top: 30px;
+	left: 600px;
+	position: absolute;
+}
+
+.Main .Header .topPhone .bigPhone{
+	font-size:23px;
+}
+
+.Main .Header .topBucket {
+    background: url("img/bucketIcon.png") no-repeat;
+    padding: 0px 0px 0px 30px;
+    font: 20px/22px 'FontMedium';
+    top: 55px;
+	left: 600px;
+	position: absolute;
+}
+
+.Main .Header .topRoad{
+	float: right;
+	background: url("img/topRoad.png") no-repeat;
+    width: 350px;
+    height: 100%;
+	display: block;
+}
+
+.Main .Menu{
+	position: relative;
+	background: url("img/menuFon.jpg") no-repeat;
+	width: 100%;
+	height: 58px; 
+	margin: 0 0 20 0;
+	border-radius: 7px;
+	padding: 1px 0 0;
+}
+
+.Main .Menu ul {
+	margin: 0;
+	vertical-align: middle
+}
+
+.Main .Menu li {
+	display: inline-block;
+	padding: 5px 4%;
+	border-right: 1px dashed #ec9890;
+	margin-top: 10px;
+}
+
+.Main .Menu li.last{
+	border-right: none;
+}
+
+.Main .Menu li a{
+	color: white;
+	font-size: 18px;
+	text-decoration: none;
+}
+
+.Main .BigLogo{
+	background: url("img/покрышка.jpg");
+	width: 100%;
+	height: 290px; 
+	overflow: hidden;
+	border-radius: 7px;
+}
+
+.Main .BigLogo .Text{
+	margin: 40px 0 0 50px;
+	font-family: fantasy;
+}
+
+.Main .BigLogo .First{
+	color: black;
+	font-size: 45px;
+	text-transform: uppercase;
+}
+
+.Main .BigLogo .Second{
+	color: red;
+	font-size: 45px;
+	text-transform: uppercase;
+}
+
+.Main .BigLogo .Third{
+	color: black;
+	font-size: 30px;
+}
+
+.Main .BigLogo .Fourth{
+	color: red;
+	font-size: 30px;
+}
+
+.Main .OnlineMagazine {
+    display: block;
+    background: url("img/enterButton.jpg") no-repeat;
+	margin: 40px auto;
+    width: 381px;
+    height: 45px;
+    text-decoration: none;
+    color: #404040;
+    font: 18px 'FontMedium';
+}
+
+.Main .OnlineMagazine a {
+    float: right;
+    padding: 12px 55px 0 0;
+}
+
+.Main .OnlineMagazine a:hover {
+    color: #00008b;
+}
+
+.Main .Search {
+    width: 100%;
+	font: 12px/12px 'Verdana';
+}
+
+.Main .Search tbody {
+font-size: 12;
+}
+
+.Main .Search .searchTD {
+    display: inline-block;
+    width: 32%;
+    height: 262px;
+    margin: 0 1px 0 0;
+    border-radius: 10px;
+    border: 1px solid #dbdbdb;
+    font: 12px/12px 'Verdana';
+	overflow: hidden;
+}
+
+/*.Search td {
+width: 100%;
+}*/
+
+.Main .Search td.customazeMargin select {
+	width: 100%;
+}
+
+.Main .Search .searchTD .searchTDTitle {
+    text-align: center;
+    font: 16px/39px 'FontBold';
+    color: #303134;
+    text-transform: uppercase;
+    background: #e6eff1;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+
+.Main .Search .searchTD .searchForm {
+    padding: 25px 18px 15px 18px;
+    position: relative;
+    height: 182px;
+}
+
+
+.Main .Search .searchAuto {
+    display: inline-block;
+    width: 33%;
+    height: 262px;
+    margin: 0 1px 0 0;
+    border-radius: 10px;
+    border: 1px solid #dbdbdb;
+    font: 12px/12px 'Verdana';
+	overflow: hidden;
+}
+
+
+.Main .Search .searchAuto .searchAutoTitle {
+    text-align: center;
+    font: 16px/39px 'FontBold';
+    color: #d52f1f;
+    text-transform: uppercase;
+    background: #fff;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.Main .Search .searchAuto .searchAutoForm {
+    padding: 25px 18px 15px 18px;
+    position: relative;
+    height: 182px;
+    background: #e6eff1;
+}
+
+.Main .Search .subs {
+    margin: 0;
+    text-align: center;
+	position: absolute;
+    bottom: 15px;
+	left: 110px; // говно
+}
+
+.Main .Search .subs button {
+	height: 31px;
+	width: 120px;
+	border-radius: 5px;
+	border: none;
+	font-family: 'FontBold';
+	font-size: 14px;
+	color: #49555c;
+	text-transform: uppercase;
+	background: url("img/bts.png") no-repeat 0 0;
+	line-height: 33px;
+	overflow: hidden;
+}
+
+.Main .Search .subs button:hover{
+	background-position: 0 100%;
+
+}
+
+.Main .Hits {
+	margin: 30 0 0 0;
+	padding: 15 0 0 0;
+	background: #b3d4fc;
+	text-align: center;
+}
+
+.Main .Hits .Title {
+	margin: -30px auto 0 auto;
+	width: 235px;
+	font: 16px/28px 'FontBold';
+	color: #d52f1f;
+	border: 1px solid #dbdbdb;
+	border-radius: 15px;
+	background: #fff;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.Main .Hits .Item {
+	display: inline-block;
+	font-size: 12px;
+	margin: 10px 10px 0;
+	overflow: hidden;
+}
+
+.Main .Hits .Item a{
+	color: #d52f1f;
+}
+
+.Main .Hits .Item .PriceVal{
+	font-size: 18px;
+}
+
+.Main .Footer{
+    width: 100%;
+	display: block;
+    margin: 0;
+    text-align: center;
+    font: 11px 'Tahoma';
+    color: #474b4d;
+}
+
+.Main .Footer .genumEnter {
+	display: block;
+    margin: 20px auto 0;
+    white-space: nowrap;
+    text-indent: 9999em;
+    overflow: hidden;
+    width: 60px;
+    height: 26px;
+    background: url("img/genum.png") no-repeat;
+}
+
+.Main .Footer .genumEnter:hover {
+    background-position: 100% 0;
+}
+
+.Main .Footer .Copy{
+	margin: 10px 0 0 10px;
+	display: block;
+	text-align: left;
+}
