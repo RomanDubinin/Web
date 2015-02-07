@@ -1,0 +1,63 @@
+﻿@model LessonProject.Model.PageConfiguration.MessagesPageConfig
+
+@{
+    ViewBag.Title = "Forum";
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align: center; font-family: mriam; font-size: 50px; font-style: italic;"> @Model.Topic </h2>
+
+@foreach (var message in Model.Messages)
+{
+
+    <center>
+        <table border-style ="hidden" width="1100px" height="30%">
+            <tr>
+
+                <td width="90px">
+                    @message.User.Email
+                </td>
+
+                
+
+                <td width="140px">
+                    @message.AddedDate
+                </td>
+
+                <th  align="left">
+                    @message.Statement
+
+                </th>
+
+                <td width="50px" align="center">
+                    @if (Model.RightToAccess >= 2)
+                    {
+
+                        using (Html.BeginForm("DeleteMessage", "Messages", new { messageId = message.Id }))
+                        {
+
+                            <input type="submit" padding="10px" value="Удалить" />
+
+                        }
+                    }
+
+                </td>
+            </tr>
+        </table>
+    </center>
+
+}
+
+<br><br/>
+@if (Model.RightToAccess >= 1)
+{
+    using (Html.BeginForm("CreateMessage", "Messages"))
+    {
+        <center>
+            <textarea name="statement" ></textarea>
+            
+            <input type="submit"/>
+        </center>
+    }
+
+}

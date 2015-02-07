@@ -1,0 +1,31 @@
+﻿@model IList<LessonProject.Model.User>
+
+@{
+    ViewBag.Title = "Forum";
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align: center; font-family: mriam; font-size: 50px; font-style: italic;">Пользователи</h2>
+
+<p>
+    @foreach (var user in Model)
+{
+    <div class="item" style="font-size: 20px; text-align: center;">
+        <center>
+            <table border="1" width="40%" height="25%">
+                <tr>
+                    <th width="70px">
+                        <span class="id"> @user.Id </span>
+                    </th>
+                    <th width="200px">
+                        <span class="email"> @user.Email </span>
+                    </th>
+                    <th>
+                        <span class="activateDate"> @user.AddedDate </span>
+                    </th>
+                </tr>
+            </table>
+        </center>
+    </div>
+}
+</p>

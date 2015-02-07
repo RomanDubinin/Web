@@ -1,0 +1,71 @@
+﻿@model LessonProject.Models.ViewModels.UserView
+@{
+    ViewBag.Title = "Forum";
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+}
+<br> </br>
+<h2 style="text-align: center; font-family: mriam; font-size: 40px; font-style: italic;"> Регистрация </h2>
+@using (Html.BeginForm("Register", "User", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.ValidationSummary()
+
+    <fieldset style="text-align: center; font-family: mriam; font-size: 15px; font-style: italic;">
+        <div class="control-group">
+            <label class="control-label" for="Email">
+                E-mail:
+            </label>
+            <div class="controls">
+                @Html.ValidationMessage("Email")
+                @Html.TextBox("Email", Model.Email)
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="FirstName">
+                Пароль:
+            </label>
+            <div class="controls">
+                @Html.ValidationMessage("Password")
+                @Html.Password("Password", Model.Password)
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="FirstName">
+                Повторите пароль:
+            </label>
+            <div class="controls">
+                @Html.ValidationMessage("ConfirmPassword")
+                @Html.Password("ConfirmPassword", Model.ConfirmPassword)
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="FirstName">
+                Введите дату рождения:
+            </label>
+            <div class="controls">
+                @Html.DropDownList("BirthdateDay", Model.BirthdateDaySelectList)
+                @Html.DropDownList("BirthdateMonth", Model.BirthdateMonthSelectList)
+                @Html.DropDownList("BirthdateYear", Model.BirthdateYearSelectList)
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="FirstName">
+                Введите код:
+            </label>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="FirstName">
+                <img src="@Url.Action("Captcha", "User")" alt="captcha" />
+            </label>
+            <div class="controls">
+                @Html.ValidationMessage("Captcha")
+                @Html.TextBox("Captcha", Model.Captcha)
+            </div>
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+                Регистрация
+            </button>
+            @Html.ActionLink("Отмена", "Index", null, null, new { @class = "btn" })
+        </div>
+    </fieldset>
+}

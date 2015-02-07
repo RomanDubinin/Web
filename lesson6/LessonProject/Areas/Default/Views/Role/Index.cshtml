@@ -1,0 +1,32 @@
+﻿@model IList<LessonProject.Model.Role>
+
+@{
+    ViewBag.Title = "Forum";
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+}
+
+<h1 style="text-align: center; font-family: mriam; font-size: 50px; font-style: italic;"> Roles </h1>
+
+<p>
+    @foreach (var role in Model)
+{
+    <div class="item" style="font-size: 20px; text-align: center;">
+        <center>
+            <table border="1" width="40%" height="25%" >
+                <tr>
+                    <th width="30px">
+                        <span class="id"> @role.Id</span>
+                    </th>
+                    <th width="310px">
+                        <span class="name"> @role.Name </span>
+                    </th>
+                    <th>
+                        <span class="Code"> @role.Code </span>
+                    </th> 
+                </tr>
+            </table>
+        </center>
+    </div>
+}
+</p>
+

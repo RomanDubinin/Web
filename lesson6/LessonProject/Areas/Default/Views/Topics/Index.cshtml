@@ -1,0 +1,48 @@
+﻿@using Microsoft.Ajax.Utilities
+@model LessonProject.Model.PageConfiguration.TopicsPageConfig
+
+@{
+    ViewBag.Title = "Forum";
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align: center; font-family: mriam; font-size: 50px; font-style: italic;">Темы форума:</h2>
+
+@foreach (var topic in @Model.Topics)
+{
+    <center>
+        <table border-style="hidden" width="80%">
+
+            <th width ="15px"> * </th>
+            <th style="text-align: left; font-size: 20px;">
+                @Html.ActionLink(@topic.Name, "Index", "Messages", new {topicId = topic.Id}, null)
+            </th>
+
+            <td width="50px">
+                @if (Model.RightToAccess >= 2)
+                {
+                    using (Html.BeginForm("DeleteTopic", "Topics", new { topicId = topic.Id }))
+                    {
+
+                        <input type="submit" value="Удалить" />
+
+                    }
+                }
+            </td>
+        </table>
+
+    </center>
+}
+
+<br></br>
+@if (@Model.RightToAccess >= 1)
+{
+    using (Html.BeginForm("CreateTopic", "Topics"))
+    {
+        <center>
+            <input type="text" name="topicName" value="">
+            <input type="submit" />
+        </center>
+    }
+
+}

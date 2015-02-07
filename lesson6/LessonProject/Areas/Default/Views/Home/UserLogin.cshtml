@@ -1,0 +1,33 @@
+﻿@model LessonProject.Model.User
+
+@if (Model != null)
+{
+
+    <table border-style ="hidden" width="15%"  align="right">
+        <tr>
+            <th>@Html.ActionLink("Темы", "Index", "Topics")</th>
+            <th >@Model.Email</th>
+            <th>@Html.ActionLink("Выход", "Logout", "Login") </th>
+
+
+        </tr>
+    </table>
+
+
+
+}
+else
+{
+
+    <table border-style="hidden" width="15%" align="right" >
+        <tr>
+            <th> @Html.ActionLink("Темы", "Index", "Topics")</th>
+            <th>@Html.ActionLink("Вход", "Index", "Login")</th>
+            <th>@Html.ActionLink("Регистрация", "Register", "User")</th>
+
+
+        </tr>
+    </table>
+
+
+}
