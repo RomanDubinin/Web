@@ -1,0 +1,62 @@
+.gallery{overflow:hidden;position:relative; height: 300}
+.gallery .carusel{position:relative;width:60000px;}
+.gallery .carusel a{float:left;margin-right:5px;height:auto;}
+.gallery .prev,
+.gallery .next,
+.gallery .navigation{
+	position:absolute;
+	left:0px;
+	z-index:19;
+	width:5%; 
+	background:url(buttons/l.png) no-repeat;
+	background-position: 50% 50%;
+	height:100%;
+	cursor:pointer;
+}
+.gallery .next{
+	left:95%;
+	background-image:url(buttons/r.png);
+}
+
+		.loader {
+		  position: inherit;
+		  left: 0px;
+		  top: 0px;
+		  width: 100%;
+		  height: 100%;
+		  display: none;
+		  background: url(l.gif) 50% 50% no-repeat ;
+		}
+
+
+		.close{
+		  position:absolute;
+		  max-width:50px;
+		  max-height:50px;
+		  top:0;
+		  right:0;
+		  z-index: 123;
+		  display:none;
+		}
+
+		.bigImgSrc{
+		  max-width:1000px;
+		  max-height:480px;
+		  position:absolute;
+		  top:0;
+		  left:0;
+		  bottom:0;
+		  right:0;
+		  margin:auto;
+		}
+
+		 .display { /* затемнение экрана*/
+		  background-color:#000;
+		  position:fixed;
+		  left:0;
+		  top:0;
+		  width:100%;
+		  height:100%;
+		  opacity:0.5;
+		  display:none;
+		}
